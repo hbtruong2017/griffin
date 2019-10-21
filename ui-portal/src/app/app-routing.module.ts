@@ -6,10 +6,8 @@ import { SubmitLoanComponent } from './submit-loan/submit-loan.component';
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'splash' },  
+  { path: '', pathMatch: 'full', redirectTo: 'home' },  
   { path: 'home', component: HomeComponent },
-  { path: 'splash', component: SplashComponent },
-  { path: 'request', component: SubmitLoanComponent }
 ];
 
 @NgModule({
