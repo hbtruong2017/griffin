@@ -1,429 +1,266 @@
-
-<body style="padding-top: 100px">
-    
-  <!-- NAVBAR -->
-  <nav class="navbar fixed-top navbar-white bg-white navbar-expand">
-      <div class="container">
-          <!-- NAVBAR LOGO -->
-          <div class="col col-lg-2">
-              <a class="navbar-brand" href="#">
-              <strong>LOGO HERE</strong>
-              </a>
-          </div>
-          <!-- NAVBAR LOGO -->
+  <!-- Content -->
+  <div class="content ht-100v pd-0">
+    <!-- Header -->
+    <div class="content-header">
+           <div class="workinprogress">
+              <h6 class="tx-15 mg-t-15">2 hours of work left</h6>
+        <div class="progress op-7">
+            <div class="progress-bar wd-75p" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+               <p class="tx-color-grey tx-12">Started work at 9:03am, 12 Nov 2019. Office location: London.</p>
+        </div>
           
-          <!-- NAVBAR SEARCH -->
-          <div class="col">
-              <div class="site-header__search">
-                  <div class="p-1 bg-light rounded-pill shadow-sm">
-                      <div class="input-group">
-                        <input type="search" placeholder="Search for loans" aria-describedby="button" class="form-control border-0 bg-light">
-                        <div class="input-group-append">
-                          <button id="button" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+        <button class="btn btn-sm btn-primary btn-uppercase" data-toggle="modal" data-target="#EndWork"><i class="fas fa-sign-out-alt"></i> End work</button>
+        
+        <!-- End Work Modal -->
+        <div class="modal fade" id="EndWork" tabindex="-1" role="dialog" aria-labelledby="EndWorkCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="EndWorkLongTitle">End Work</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="tx-semibold mg-b-0">WORK IN PROGRESS...</p>
+                        <p class="mg-b-0">Clocked in timestamp</p>
+                        <p class="mg-b-0">"You have worked for xx.xx hours"</p>
+                        <p class="mg-b-0">“You will be paid xx.xx Griffs”</p>
+
+                        <div class="form-group">
+                            <div class="row">
+                               <p class="mg-b-0"></p>
+                            </div>
+                            <textarea class="form-control" rows="2" placeholder="Write some description (optional)"></textarea>
                         </div>
-                      </div>
-                  </div>
-              </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">End work</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Work Modal -->
+    </div>
+    <!-- Header -->
+    
+    <!-- Dashboard -->
+    <div class="content-body">
+        <div class="container pd-x-0">
+            <div class="mg-b-20">
+                <div>
+                  <h4>My Work Summary</h4>
+                </div>
+            </div>
+
+        <div class="row row-xs">
+            <!-- Wallet Balance -->
+            <div class="col-12">
+                <div class="card card-body">
+                    <div class="d-md-flex align-items-center justify-content-between">
+                        <div class="media align-sm-items-center">
+                            <div class="avatar d-none d-sm-block"><span class="avatar-initial rounded-circle bg-teal"><i class="fas fa-wallet"></i></span></div>
+                            <div class="mg-l-15">
+                                <h6 class="tx-15 tx-medium mg-b-5">Wallet Balance <span class="tx-normal tx-color-grey">(in Griffs)</span></h6>
+                                <h2 class="tx-30 tx-semibold mg-b-0">$10,501.43</h2>
+                            </div>
+                        </div>
+                        <button class="btn btn-sm btn-secondary btn-uppercase"><i class="fas fa-minus-square"></i> Withdraw funds</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Wallet Balance -->
+        
+            <!-- Wallet Balance Chart -->
+            <div class="col-lg-8 col-xl-7 mg-t-10">
+                <div class="card card-crypto">
+                    <div class="card-header pd-y-8 d-sm-flex align-items-center justify-content-between">
+                        <nav class="nav nav-line">
+                            <a href="" class="nav-link active">Week</a>
+                            <a href="" class="nav-link">Month</a>
+                            <a href="" class="nav-link">Year</a>
+                            <a href="" class="nav-link">All</a>
+                        </nav>
+                    <div class="tx-13 tx-color-grey align-items-center">
+                        <a href="" class="dateselect-link">05/11/2019 <i class="fas fa-chevron-down"></i></a>
+                        <span>to</span>
+                        <a href="" class="dateselect-link">11/11/2019 <i class="fas fa-chevron-down"></i></a>
+                    </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="walletbalance-chart">
+                            <div id="flotChart" class="flot-chart"></div>
+                        </div>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+            <!-- Wallet Balance Chart -->
+
+            <!-- Recent Transactions -->
+            <div class="col-lg-4 col-xl-5 mg-t-10">
+                <div class="card">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h6 class="mg-b-0">Recent Transaction History</h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex pd-sm-x-20">
+                            <div class="avatar d-none d-sm-block"><span class="avatar-initial rounded-circle bg-teal"><i class="fas fa-building"></i></span></div>
+                            <div class="pd-sm-l-10">
+                              <p class="tx-medium mg-b-0">Standard Work Payment</p>
+                              <small class="tx-12 tx-color-grey mg-b-0">11 Nov 2019, 6:01pm</small>
+                            </div>
+                            <div class="mg-l-auto text-right">
+                              <p class="tx-medium tx-15 tx-success mg-b-0">+ $300.00</p>
+                              <small class="tx-12 mg-b-0">8 hrs of standard work</small>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex pd-sm-x-20">
+                            <div class="avatar d-none d-sm-block"><span class="avatar-initial rounded-circle bg-indigo op-7"><i class="fas fa-briefcase"></i></span></div>
+                            <div class="pd-sm-l-10">
+                              <p class="tx-medium mg-b-0">Overtime Work Payment</p>
+                              <small class="tx-12 tx-color-grey mg-b-0">10 Nov 2019, 9:14pm</small>
+                            </div>
+                            <div class="mg-l-auto text-right">
+                              <p class="tx-medium tx-15 tx-success mg-b-0">+ $80.50</p>
+                              <small class="tx-12 mg-b-0">3 hrs of overtime work</small>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex pd-sm-x-20">
+                            <div class="avatar d-none d-sm-block"><span class="avatar-initial rounded-circle bg-orange op-7"><i class="fas fa-sign-out-alt"></i></span></div>
+                            <div class="pd-sm-l-10">
+                              <p class="tx-medium mg-b-2">Fund Withdrawal</p>
+                              <small class="tx-12 tx-color-grey mg-b-0">09 Nov 2019, 10:32pm</small>
+                            </div>
+                            <div class="mg-l-auto text-right">
+                              <p class="tx-medium tx-15 tx-danger mg-b-0">- $923.59</p>
+                              <small class="tx-12 mg-b-0">Converted to GBP 1,237.84</small>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex pd-sm-x-20">
+                            <div class="avatar d-none d-sm-block"><span class="avatar-initial rounded-circle bg-pink op-7"><i class="fas fa-receipt"></i></span></div>
+                            <div class="pd-sm-l-10">
+                              <p class="tx-medium mg-b-0">Sep Expense Claims</p>
+                              <small class="tx-12 tx-color-grey mg-b-0">08 Nov 2019, 2:30pm</small>
+                            </div>
+                            <div class="mg-l-auto text-right">
+                              <p class="tx-medium tx-15 tx-success mg-b-0">+ $129.50</p>
+                              <small class="tx-12 mg-b-0">Expense claim #1234</small>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex pd-sm-x-20">
+                            <div class="avatar d-none d-sm-block"><span class="avatar-initial rounded-circle bg-lightblue"><i class="fas fa-plus"></i></span></div>
+                            <div class="pd-sm-l-10">
+                              <p class="tx-medium mg-b-0">Bonus Payment</p>
+                              <small class="tx-12 tx-color-grey mg-b-0">06 Nov 2019, 12:02am</small>
+                            </div>
+                            <div class="mg-l-auto text-right">
+                              <p class="tx-medium tx-15 tx-success mg-b-0">+ $2,500.00</p>
+                              <small class="tx-12 mg-b-0">Achieved Aug sales target</small>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="card-footer text-center tx-13">
+                        <a href="transactions.html" class="viewtransactions-link">View all transactions <i class="fas fa-chevron-down"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Recent Transactions -->
+            
+            <!-- Performance -->
+            <div class="col-lg-4 mg-t-10">
+                <div class="card">
+                    <div class="card-header">
+                      <h6 class="mg-b-0">Work Performance</h6>
+                    </div>
+                    <div class="card-body pd-y-10">
+                        <div class="d-flex align-items-baseline">
+                            <h1 class="tx-40 tx-normal mg-b-5 mg-r-5 mg-t-10">9.80</h1>
+                            <p class="tx-13 tx-color-grey mg-l-8"><span class="tx-medium tx-success"><i class="fas fa-arrow-up"></i> 5.40%</span></p>
+                        </div>
+                        <h6 class="tx-uppercase tx-semibold tx-10 tx-color-performance mg-b-20">Excellent</h6>
+
+                        <table class="table-dashboard">
+                            <tbody>
+                                <tr>
+                                <td><div class="wd-12 ht-12 rounded-circle bd bd-3 bd-primary"></div></td>
+                                <td class="tx-medium">Excellent</td>
+                                <td class="text-right">3,007</td>
+                                <td class="text-right">50%</td>
+                                </tr>
+                                <tr>
+                                <td><div class="wd-12 ht-12 rounded-circle bd bd-3 bd-success"></div></td>
+                                <td class="tx-medium">Very Good</td>
+                                <td class="text-right">1,674</td>
+                                <td class="text-right">25%</td>
+                                </tr>
+                                <tr>
+                                <td><div class="wd-12 ht-12 rounded-circle bd bd-3 bd-warning"></div></td>
+                                <td class="tx-medium">Good</td>
+                                <td class="text-right">125</td>
+                                <td class="text-right">6%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Performance -->
+
+            <!-- Performance Chart -->
+            <div class="col-lg-5 mg-t-10">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mg-b-0">Hours Worked in the Past Week</h6>
+                    </div>
+                <div class="card-body pd-lg-25">
+                    <div class="col-lg-12">
+                        <div class="chart-two mg-b-10 mg-t-10">
+                            <canvas id="chartBar"></canvas>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- Performance Chart -->
+            
+            <!-- Leaves & MCs -->
+            <div class="col-lg-12 col-xl-3 mg-t-10">
+                
+                <!-- Leaves -->
+                <div class="card mg-b-10">
+                    <div class="card-body pd-y-20 pd-x-25">
+                    <div class="row row-sm">
+                        <div class="col-12">
+                            <h3 class="tx-normal mg-b-5">13</h3>
+                            <h6 class="tx-12 tx-semibold tx-uppercase tx-primary mg-b-5">Days of Leaves Left</h6>
+                            <p class="tx-11 tx-color-grey mg-b-0">You can take up to 13 days of leaves till 31 Dec.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- Leaves -->
+                
+                <!-- MCs -->
+                <div class="card mg-b-10">
+                    <div class="card-body pd-y-20 pd-x-25">
+                        <div class="row row-sm">
+                            <div class="col-12">
+                                <h3 class="tx-normal mg-b-5">6</h3>
+                                <h6 class="tx-12 tx-semibold tx-uppercase tx-pink mg-b-5">Medical Leaves</h6>
+                                <p class="tx-11 tx-color-grey mg-b-0">You have utilised 6 days of medical leaves as of 11 Nov.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- MCs -->
+            </div>
+            <!-- Leaves & MCs -->
+
           </div>
-          <!-- NAVBAR SEARCH -->
-          
-          <!-- NAVBAR PROFILE DROPDOWN & LOAN REQUEST CTA-->
-          <div class="col-md-auto">
-              <div class="row">
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                  </button>
-                  
-                  <div class="collapse navbar-collapse" id="navbar-list-4">
-                      <ul class="navbar-nav">
-                          <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle border" alt="">
-                              </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <a class="dropdown-item" href="#">Activity</a>
-                              <a class="dropdown-item" href="#">Edit Profile</a>
-                              <a class="dropdown-item" href="#">Log Out</a>
-                          </div>
-                          </li>
-                      </ul>
-                  </div>
-                  
-                  <button type="button" class="btn btn-primary"><i class="fa fa-chevron-circle-up"></i>New loan request</button>
-              </div>
-          </div>
-          <!-- NAVBAR PROFILE DROPDOWN & LOAN REQUEST CTA-->
-      </div>
-  </nav>
-  <!-- NAVBAR --><br/><br/>
-  
-  <!-- LOAN CAROUSEL & FILTERS -->
-  <div class="loans-carousel">
-      <div class="container">
-
-          <h4>Available Loans</h4>
-
-          <div class="row">
-              <!-- LOAN CAROUSEL -->
-              <div class="col-9">
-                  <!-- ROW #1 OF LOANS -->
-                  <div class="row">
-                      <div class="col-md-3">
-                          <div class="loans-carousel__cell">
-                              <div class="loan-card ">
-                                  <div class="loan-card__badges-list">
-                                      <div class="loan-card__badge loan-card__badge--studyloan">Study loan</div>
-                                  </div>
-                                  <div class="loan-card__image">
-                                      <a href="loandetails.html"><img src="../../assets/images/thumbnail.jpg" alt=""></a>
-                                  </div>
-                                  <div class="loan-card__info">
-                                      <div class="loan-card__loanamount">
-                                          $5,800.00
-                                      </div>
-                                      <div class="row">
-                                      <div class="loan-card__interestrate">
-                                           <i class="fa fa-search-dollar"></i>2.50%
-                                      </div>
-                                      <div class="loan-card__loantenure">
-                                          <i class="far fa-clock"></i>3 years
-                                      </div>
-                                      </div>
-                                      <div class="loan-card__loantitle">
-                                          One semester of SMU 2019 tuition fees
-                                      </div>
-                                  </div>
-                                  <div class="loan-card__actions">
-                                      <div class="loan-card__buttons">
-                                          <button class="btn btn-primary" type="button">Invest</button>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="col-md-3">
-                          <div class="loans-carousel__cell">
-                              <div class="loan-card ">
-                                  <div class="loan-card__badges-list">
-                                      <div class="loan-card__badge loan-card__badge--carloan">Car loan</div>
-                                  </div>
-                                  <div class="loan-card__image">
-                                      <a href="loandetails.html"><img src="../../assets/images/thumbnail.jpg" alt=""></a>
-                                  </div>
-                                  <div class="loan-card__info">
-                                      <div class="loan-card__loanamount">
-                                          $23,500.00
-                                      </div>
-                                      <div class="row">
-                                      <div class="loan-card__interestrate">
-                                           <i class="fa fa-search-dollar"></i>3.20%
-                                      </div>
-                                      <div class="loan-card__loantenure">
-                                          <i class="far fa-clock"></i>5 years
-                                      </div>
-                                      </div>
-                                      <div class="loan-card__loantitle">
-                                          Second-hand Toyota Prius
-                                      </div>
-                                  </div>
-                                  <div class="loan-card__actions">
-                                      <div class="loan-card__buttons">
-                                          <button class="btn btn-primary" type="button">Invest</button>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="col-md-3">
-                          <div class="loans-carousel__cell">
-                              <div class="loan-card ">
-                                  <div class="loan-card__badges-list">
-                                      <div class="loan-card__badge loan-card__badge--studyloan">Study loan</div>
-                                  </div>
-                                  <div class="loan-card__image">
-                                      <a href="loandetails.html"><img src="../../assets/images/thumbnail.jpg" alt=""></a>
-                                  </div>
-                                  <div class="loan-card__info">
-                                      <div class="loan-card__loanamount">
-                                          $4,500.00
-                                      </div>
-                                      <div class="row">
-                                      <div class="loan-card__interestrate">
-                                           <i class="fa fa-search-dollar"></i>2.30%
-                                      </div>
-                                      <div class="loan-card__loantenure">
-                                          <i class="far fa-clock"></i>1 year
-                                      </div>
-                                      </div>
-                                      <div class="loan-card__loantitle">
-                                          One semester of NTU 2019 tuition fees
-                                      </div>
-                                  </div>
-                                  <div class="loan-card__actions">
-                                      <div class="loan-card__buttons">
-                                          <button class="btn btn-primary" type="button">Invest</button>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="col-md-3">
-                          <div class="loans-carousel__cell">
-                              <div class="loan-card ">
-                                  <div class="loan-card__badges-list">
-                                      <div class="loan-card__badge loan-card__badge--SMEloan">SME loan</div>
-                                  </div>
-                                  <div class="loan-card__image">
-                                      <a href="loandetails.html"><img src="../../assets/images/thumbnail.jpg" alt=""></a>
-                                  </div>
-                                  <div class="loan-card__info">
-                                      <div class="loan-card__loanamount">
-                                          $35,300.00
-                                      </div>
-                                      <div class="row">
-                                      <div class="loan-card__interestrate">
-                                           <i class="fa fa-search-dollar"></i>3.50%
-                                      </div>
-                                      <div class="loan-card__loantenure">
-                                          <i class="far fa-clock"></i>6 years
-                                      </div>
-                                      </div>
-                                      <div class="loan-card__loantitle">
-                                          To purchase kitchen equipment for new cafe
-                                      </div>
-                                  </div>
-                                  <div class="loan-card__actions">
-                                      <div class="loan-card__buttons">
-                                          <button class="btn btn-primary" type="button">Invest</button>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- ROW #1 OF LOANS --><br/>
-                  
-                  <!-- ROW #2 OF LOANS -->
-                  <div class="row">
-                      <div class="col-md-3">
-                          <div class="loans-carousel__cell">
-                              <div class="loan-card ">
-                                  <div class="loan-card__badges-list">
-                                      <div class="loan-card__badge loan-card__badge--carloan">Car loan</div>
-                                  </div>
-                                  <div class="loan-card__image">
-                                      <a href="loandetails.html"><img src="../../assets/images/thumbnail.jpg" alt=""></a>
-                                  </div>
-                                  <div class="loan-card__info">
-                                      <div class="loan-card__loanamount">
-                                          $31,800.00
-                                      </div>
-                                      <div class="row">
-                                      <div class="loan-card__interestrate">
-                                           <i class="fa fa-search-dollar"></i>3.75%
-                                      </div>
-                                      <div class="loan-card__loantenure">
-                                          <i class="far fa-clock"></i>3 years
-                                      </div>
-                                      </div>
-                                      <div class="loan-card__loantitle">
-                                          Partial payment of new Audi A4 car
-                                      </div>
-                                  </div>
-                                  <div class="loan-card__actions">
-                                      <div class="loan-card__buttons">
-                                          <button class="btn btn-primary" type="button">Invest</button>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="col-md-3">
-                          <div class="loans-carousel__cell">
-                              <div class="loan-card ">
-                                  <div class="loan-card__badges-list">
-                                      <div class="loan-card__badge loan-card__badge--studyloan">Study loan</div>
-                                  </div>
-                                  <div class="loan-card__image">
-                                      <a href="loandetails.html"><img src="../../assets/images/thumbnail.jpg" alt=""></a>
-                                  </div>
-                                  <div class="loan-card__info">
-                                      <div class="loan-card__loanamount">
-                                          $4,300.00
-                                      </div>
-                                      <div class="row">
-                                      <div class="loan-card__interestrate">
-                                           <i class="fa fa-search-dollar"></i>2.50%
-                                      </div>
-                                      <div class="loan-card__loantenure">
-                                          <i class="far fa-clock"></i>4 years
-                                      </div>
-                                      </div>
-                                      <div class="loan-card__loantitle">
-                                          One semester of NUS 2019 tuition fees
-                                      </div>
-                                  </div>
-                                  <div class="loan-card__actions">
-                                      <div class="loan-card__buttons">
-                                          <button class="btn btn-primary" type="button">Invest</button>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="col-md-3">
-                          <div class="loans-carousel__cell">
-                              <div class="loan-card ">
-                                  <div class="loan-card__badges-list">
-                                      <div class="loan-card__badge loan-card__badge--SMEloan">SME loan</div>
-                                  </div>
-                                  <div class="loan-card__image">
-                                      <a href="loandetails.html"><img src="../../assets/images/thumbnail.jpg" alt=""></a>
-                                  </div>
-                                  <div class="loan-card__info">
-                                      <div class="loan-card__loanamount">
-                                          $3,000.00
-                                      </div>
-                                      <div class="row">
-                                      <div class="loan-card__interestrate">
-                                           <i class="fa fa-search-dollar"></i>3.10%
-                                      </div>
-                                      <div class="loan-card__loantenure">
-                                          <i class="far fa-clock"></i>2 years
-                                      </div>
-                                      </div>
-                                      <div class="loan-card__loantitle">
-                                          Minor renovations to restaurant
-                                      </div>
-                                  </div>
-                                  <div class="loan-card__actions">
-                                      <div class="loan-card__buttons">
-                                          <button class="btn btn-primary" type="button">Invest</button>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="col-md-3">
-                          <div class="loans-carousel__cell">
-                              <div class="loan-card ">
-                                  <div class="loan-card__badges-list">
-                                      <div class="loan-card__badge loan-card__badge--SMEloan">SME loan</div>
-                                  </div>
-                                  <div class="loan-card__image">
-                                      <a href="loandetails.html"><img src="../../assets/images/thumbnail.jpg" alt=""></a>
-                                  </div>
-                                  <div class="loan-card__info">
-                                      <div class="loan-card__loanamount">
-                                          $4,200.00
-                                      </div>
-                                      <div class="row">
-                                      <div class="loan-card__interestrate">
-                                           <i class="fa fa-search-dollar"></i>1.50%
-                                      </div>
-                                      <div class="loan-card__loantenure">
-                                          <i class="far fa-clock"></i>3 years
-                                      </div>
-                                      </div>
-                                      <div class="loan-card__loantitle">
-                                          To fund advertising budget for new product
-                                      </div>
-                                  </div>
-                                  <div class="loan-card__actions">
-                                      <div class="loan-card__buttons">
-                                          <button class="btn btn-primary" type="button">Invest</button>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- ROW #2 OF LOANS --><br/>
-                  
-                  <!-- VIEW MORE LOANS -->
-                  <div class="row justify-content-center">
-                       <button type="button" class="btn btn-primary">View more</button>
-                  </div>
-                  <!-- VIEW MORE LOANS -->
-              </div>
-              <!-- LOAN CAROUSEL -->
-
-              <!-- FILTERS-->
-              <div class="col-3">
-                  <div class="container">
-                      <div class="filters">
-                          <br/>
-                          <div class="title">Filter loans by:</div>
-                              <strong>Loan amount</strong><br/>
-                              <div class="filter-value" data-min="100" data-max="50000" data-from="5000" data-to="15000">
-                                  <div class="filter-value__slider"></div>
-                                  <div class="filter-value__title">$<span class="filter-value__min-value"></span> – $<span class="filter-value__max-value"></span></div>
-                              </div><br/><br/>
-
-                              <strong>Interest rate</strong><br/>
-                              <div class="filter-value" data-min="1" data-max="20" data-from="3" data-to="10">
-                                  <div class="filter-value__slider"></div>
-                                  <div class="filter-value__title"><span class="filter-value__min-value"></span>% – <span class="filter-value__max-value"></span>%</div>
-                              </div><br/><br/>
-
-                              <strong>Loan period</strong><br/>
-                              <div class="custom-control custom-radio">
-                                  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                                  <label class="custom-control-label" for="customRadioInline1">&lt; 1 year</label>
-                              </div>
-                              <div class="custom-control custom-radio">
-                                  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" checked>
-                                  <label class="custom-control-label" for="customRadioInline2">1 - 3 years</label>
-                              </div>
-                              <div class="custom-control custom-radio">
-                                  <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
-                                  <label class="custom-control-label" for="customRadioInline3">3 - 5 years</label>
-                              </div>
-                              <div class="custom-control custom-radio">
-                                  <input type="radio" id="customRadioInline4" name="customRadioInline1" class="custom-control-input">
-                                  <label class="custom-control-label" for="customRadioInline4">5 - 10 years</label>
-                              </div>
-                              <div class="custom-control custom-radio">
-                                  <input type="radio" id="customRadioInline5" name="customRadioInline1" class="custom-control-input">
-                                  <label class="custom-control-label" for="customRadioInline5">&gt; 10 years</label>
-                              </div>
-                              <br/>
-
-                          <button type="button" class="btn btn-primary">Filter</button>
-                          <button type="button" class="btn btn-secondary">Reset</button>
-                      </div><br/><br/>
-                  </div>
-              </div>
-              <!-- FILTERS-->
-          </div>
-      </div>
-  </div>
-  <!-- LOAN CAROUSEL & FILTERS --><br/><br/>
-
-  <!-- TBANK BANNER -->
-  <div class="banner">
-      <div class="container">
-          <a href="http://tbankonline.com" target="_blank" class="banner__body">
-              <div class="banner__image" style="background-image: url('../../assets/images/thumbnail.jpg')"></div>
-          </a>
-      </div>
-  </div>
-  <!-- TBANK BANNER --><br/>
-  
-  <!-- FOOTER -->
-      <footer class="footer">
-          <div class="container">
-              <div class="footer__bottom">
-                  Peersarmalam is an IS444 projected developed by Group 4.
-              </div>
-          </div>
-      </footer>
-  <!-- FOOTER -->
-
-</body>
+        </div>
+    </div>
+    <!-- Dashboard -->
+</div>
