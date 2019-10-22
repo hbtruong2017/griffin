@@ -9,15 +9,15 @@ router.get('/', function (req, res) {
 });
 
 // Import employee controller
-var contactController = require('./controller/employeeController');
+var employeeController = require('./controller/employeeController');
 // Contact routes
-router.route('/contacts')
-    .get(contactController.index)
-    .post(contactController.new);
-router.route('/contacts/:contact_id')
-    .get(contactController.view)
-    .patch(contactController.update)
-    .put(contactController.update)
-    .delete(contactController.delete);
+router.route('/employees')
+    .get(employeeController.index)
+    .post(employeeController.new);
+router.route('/employees/:id')
+    .get(employeeController.view)
+    .patch(employeeController.update)
+    .put(employeeController.update)
+    .delete(employeeController.delete);
 // Export API routes
 module.exports = router;

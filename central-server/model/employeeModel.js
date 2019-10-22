@@ -1,16 +1,28 @@
 // contactModel.js
 var mongoose = require('mongoose');
 // Setup schema
-var emplyeeSchema = mongoose.Schema({
-    id: {
-        type: Number,
-        required: true
-    },
+var employeeSchema = mongoose.Schema({
     name: {
         type: String,
         required: true
     },
     email: {
+        type: String,
+        required: true
+    },
+    gender: {
+        type: String,
+        required: true
+    },
+    phone: {
+        type: Number,
+        required: true
+    },
+    jobTitle: {
+        type: String,
+        required: true
+    },
+    jobType: {
         type: String,
         required: true
     },
@@ -20,7 +32,7 @@ var emplyeeSchema = mongoose.Schema({
     },
     deductRate: {
         type: Number,
-        required: true
+        default: 0
     },
     create_date: {
         type: Date,
@@ -28,7 +40,7 @@ var emplyeeSchema = mongoose.Schema({
     }
 });
 // Export Contact model
-var Contact = module.exports = mongoose.model('employee', emplyeeSchema);
+var Employee = module.exports = mongoose.model('Employee', employeeSchema);
 module.exports.get = function (callback, limit) {
-    Contact.find(callback).limit(limit);
+    Employee.find(callback).limit(limit);
 }

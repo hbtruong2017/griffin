@@ -1,6 +1,6 @@
 // contactController.js
 // Import contact model
-Contact = require("../controller/employeeModel");
+Contact = require("../model/employeeModel");
 // Handle index actions
 exports.index = function(req, res) {
   Contact.get(function(err, contacts) {
@@ -12,7 +12,7 @@ exports.index = function(req, res) {
     }
     res.json({
       status: "success",
-      message: "Contacts retrieved successfully",
+      message: "Employees retrieved successfully",
       data: contacts
     });
   });
@@ -24,12 +24,16 @@ exports.new = function(req, res) {
   contact.gender = req.body.gender;
   contact.email = req.body.email;
   contact.phone = req.body.phone;
+  contact.jobTitle = req.body.jobTitle;
+  contact.jobType = req.body.jobType;
+  contact.salaryRate = req.body.salaryRate;
+  contact.deductRate = req.body.deductRate;
   // save the contact and check for errors
   contact.save(function(err) {
     // if (err)
     //     res.json(err);
     res.json({
-      message: "New contact created!",
+      message: "New employee created!",
       data: contact
     });
   });
@@ -39,7 +43,7 @@ exports.view = function(req, res) {
   Contact.findById(req.params.contact_id, function(err, contact) {
     if (err) res.send(err);
     res.json({
-      message: "Contact details loading..",
+      message: "Employee details loading..",
       data: contact
     });
   });
@@ -56,7 +60,7 @@ exports.update = function(req, res) {
     contact.save(function(err) {
       if (err) res.json(err);
       res.json({
-        message: "Contact Info updated",
+        message: "Employee Info updated",
         data: contact
       });
     });
@@ -72,7 +76,7 @@ exports.delete = function(req, res) {
       if (err) res.send(err);
       res.json({
         status: "success",
-        message: "Contact deleted"
+        message: "Employee deleted"
       });
     }
   );
