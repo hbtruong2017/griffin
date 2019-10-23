@@ -152,6 +152,7 @@
             <p class="mg-b-0">"You have worked for xx.xx hours"</p>
             <p class="mg-b-0">“You will be paid xx.xx Griffs”</p>
 
+            <form [formGroup]="clockOutForm">
             <div class="form-group">
               <div class="row">
                 <p class="mg-b-0"></p>
@@ -159,9 +160,11 @@
               <textarea
                 class="form-control"
                 rows="2"
+                formControlName="description"
                 placeholder="Write some description (optional)"
               ></textarea>
             </div>
+          </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary">End work</button>

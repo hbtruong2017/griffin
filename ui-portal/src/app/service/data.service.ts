@@ -30,4 +30,8 @@ export class DataService {
     return this.httpClient.post(environment.CLOCK_IN_URl_POST, req)
   }
 
+  clockOut(id: string, req: any) {
+    return this.httpClient.put(environment.CLOCK_OUT_URl_POST + id, req)
+  }
+
 }
