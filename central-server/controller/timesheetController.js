@@ -22,9 +22,11 @@ exports.clockOut = function(req,res) {
     timesheet.timeOut = Date.now();
     timesheet.save(function(err) {
       if (err) res.json(err);
+      let workHours = (timesheet.timeOut.getTime() - timesheet.timeIn.getTime()) / 1000;
       res.json({
         message: "Clockout successfully",
-        data: timesheet
+        data: timesheet,
+        duration: workHours
       })
     })
   })
