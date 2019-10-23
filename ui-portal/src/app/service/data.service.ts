@@ -22,4 +22,8 @@ export class DataService {
     return this.httpClient.post(environment.GET_CUSTOMER_DETAILS + header, '');
   }
 
+  getEmployeeDetails(id: string) {
+    return this.httpClient.get(environment.GET_EMPLOYEE_DETAILS + id);
+  }
+
 }
