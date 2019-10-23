@@ -40,7 +40,7 @@ exports.new = function(req, res) {
 };
 // Handle view contact info
 exports.view = function(req, res) {
-  Contact.findById(req.params.contact_id, function(err, contact) {
+  Contact.findById(req.params.id, function(err, contact) {
     if (err) res.send(err);
     res.json({
       message: "Employee details loading..",
@@ -50,7 +50,7 @@ exports.view = function(req, res) {
 };
 // Handle update contact info
 exports.update = function(req, res) {
-  Contact.findById(req.params.contact_id, function(err, contact) {
+  Contact.findById(req.params.id, function(err, contact) {
     if (err) res.send(err);
     contact.name = req.body.name ? req.body.name : contact.name;
     contact.gender = req.body.gender;
@@ -70,7 +70,7 @@ exports.update = function(req, res) {
 exports.delete = function(req, res) {
   Contact.remove(
     {
-      _id: req.params.contact_id
+      _id: req.params.id
     },
     function(err, contact) {
       if (err) res.send(err);
