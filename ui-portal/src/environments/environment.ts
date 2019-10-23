@@ -12,7 +12,8 @@ export const environment = {
   LOGIN_CUSTOMER_URL: TBANK_API_URL,
   GET_CUSTOMER_DETAILS: TBANK_API_URL,
 
-  GET_EMPLOYEE_DETAILS: SERVER_URL + 'employees/'
+  GET_EMPLOYEE_DETAILS: SERVER_URL + 'employees/',
+  CLOCK_IN_URl_POST: SERVER_URL + 'timesheet'
 };
 
 /*
