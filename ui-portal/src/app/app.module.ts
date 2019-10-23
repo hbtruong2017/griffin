@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SubmitLoanComponent } from './submit-loan/submit-loan.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PreHomeComponent } from './pre-home/pre-home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProfileComponent } from './profile/profile.component';
     HomeComponent,
     SplashComponent,
     SubmitLoanComponent,
-    ProfileComponent
+    ProfileComponent,
+    PreHomeComponent
   ],
   imports: [
     BrowserModule,

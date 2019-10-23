@@ -26,4 +26,8 @@ export class DataService {
     return this.httpClient.get(environment.GET_EMPLOYEE_DETAILS + id);
   }
 
+  clockIn(req: any) {
+    return this.httpClient.post(environment.CLOCK_IN_URl_POST, req)
+  }
+
 }
