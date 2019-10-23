@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../service/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pre-home',
@@ -9,7 +10,8 @@ import { DataService } from '../service/data.service';
 export class PreHomeComponent implements OnInit {
   employeeDetail: any;
   employeeId: any;
-  constructor(private dataService: DataService) { }
+
+  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
     this.employeeId = "5daee7026fb70b0f746dd37b";
@@ -28,6 +30,7 @@ export class PreHomeComponent implements OnInit {
     this.dataService.clockIn(clockInReq).subscribe((data: any) => {
       window.sessionStorage.setItem("timesheetId", data.id);
       window.sessionStorage.setItem("timeIn", data.data.timeIn);
+      this.router.navigate(["/home"])
     })
   }
 
