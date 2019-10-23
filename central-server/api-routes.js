@@ -19,5 +19,11 @@ router.route('/employees/:id')
     .patch(employeeController.update)
     .put(employeeController.update)
     .delete(employeeController.delete);
+
+var timesheetController = require('./controller/timesheetController')
+router.route('/timesheet')
+    .post(timesheetController.clockIn);
+router.route('/timesheet/:id')
+    .put(timesheetController.clockOut);
 // Export API routes
 module.exports = router;
