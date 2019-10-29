@@ -12,7 +12,7 @@ var timesheetSchema = mongoose.Schema({
     },
     timeIn: {
         type: Date,
-        default: Date.now
+        default: Date
     },
     timeOut: {
         type: Date

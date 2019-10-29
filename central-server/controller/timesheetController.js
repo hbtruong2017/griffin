@@ -15,7 +15,7 @@ exports.clockIn = function(req, res) {
   var timesheet = new Timesheet();
   timesheet.employeeId = req.body.employeeId;
   timesheet.employeeName = req.body.employeeName;
-
+  timesheet.timeIn = Date.now();
   timesheet.save(function(err) {
     res.json({
       message: "Employee logged in",
