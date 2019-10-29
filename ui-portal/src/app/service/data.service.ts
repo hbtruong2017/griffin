@@ -34,4 +34,8 @@ export class DataService {
     return this.httpClient.put(environment.CLOCK_OUT_URl_POST + id, req)
   }
 
+  getTimesheet(id: string) {
+    return this.httpClient.get(environment.GET_TIMESHEET_URL + id);
+  }
+
 }
