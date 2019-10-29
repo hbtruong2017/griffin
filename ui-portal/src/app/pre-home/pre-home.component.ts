@@ -23,6 +23,8 @@ export class PreHomeComponent implements OnInit {
   }
 
   clockIn() {
+    this.router.navigate(["/home"])
+
     let clockInReq = {
         employeeId: this.employeeId,
 	      employeeName: this.employeeDetail.name
