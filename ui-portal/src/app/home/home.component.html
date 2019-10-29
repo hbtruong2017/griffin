@@ -142,7 +142,7 @@
                               <p class="tx-15 tx-semibold mg-b-0"><i class="far fa-calendar-alt"></i>Clocked in timestamp:</p>
                           </div>
                           <div class="col text-right">
-                              <p class="tx-15 tx-color-grey mg-b-0">9:02am on 11 Nov 2019</p>
+                              <p class="tx-15 tx-color-grey mg-b-0">{{timesheet.timeIn}}</p>
                           </div>
                       </div><br/>
                       <div class="row col-12">
@@ -150,7 +150,7 @@
                               <p class="tx-15 tx-semibold mg-b-0"><i class="far fa-clock"></i>Hours clocked in:</p>
                           </div>
                           <div class="col text-right">
-                              <p class="tx-15 tx-color-grey mg-b-0">8 hours</p>
+                              <p class="tx-15 tx-color-grey mg-b-0">{{duration}}</p>
                           </div>
                       </div><br/>
                       <div class="row col-12">
@@ -158,17 +158,19 @@
                               <p class="tx-15 tx-semibold mg-b-0"><i class="far fa-paper-plane"></i>Payment amount:</p>
                           </div>
                           <div class="col text-right">
-                              <p class="tx-15 tx-color-grey mg-b-0 text-right">$150.00</p>
+                              <p class="tx-15 tx-color-grey mg-b-0 text-right">{{8 * salaryRate}}</p>
                               <p class="tx-12 tx-color-grey mg-b-0 text-right">(Wallet ID: #123456)</p>
                           </div>
                       </div><br/>
                       <div class="row col-12">
+                        <form [formGroup]="clockOutForm"></form>
                           <div class="col">
                               <p class="tx-15 tx-semibold mg-b-10"><i class="far fa-building"></i>Work description:</p>
                               <div class="form-group">
-                             <textarea class="form-control" rows="4" placeholder="Briefly write what you have done at work today..."></textarea>
+                             <textarea formControlName="description" class="form-control" rows="4" placeholder="Briefly write what you have done at work today..."></textarea>
                           </div>
                           </div>
+                        </form>
                       </div>
                   </div>
               </div>
