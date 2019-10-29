@@ -1,430 +1,457 @@
 <!-- Sidebar -->
 <aside class="aside aside-fixed">
-    <!-- Sidebar Header -->
-    <div class="aside-header">
-      <a href="index.html" class="aside-logo">LOGO HERE</a>
-      <a href="" class="aside-menu-link">
-        <i class="fas fa-bars"></i>
-      </a>
-    </div>
-    <!-- Sidebar Header -->
-  
-    <!-- Sidebar Menu -->
-    <div class="aside-body">
-      <div class="aside-loggedin">
-        <div class="d-flex align-items-center">
-          <a href="" class="avatar avatar-offline"
-            ><img
-              src="../../../assets/images/paulgriffin.png"
-              class="rounded-circle"
-              alt=""
-          /></a>
-          <div class="aside-alert-link">
-            <a href=""><i class="fas fa-bell"></i></a>
-          </div>
-        </div>
-        <div class="aside-loggedin-user">
-          <a
-            href="#loggedinMenu"
-            class="d-flex align-items-center justify-content-between mg-b-2"
-            data-toggle="collapse"
-          >
-            <h4 class="tx-employeename mg-b-0">{{employeeDetail.name}}</h4>
-            <i class="fas fa-chevron-down"></i>
-          </a>
-        </div>
-        <div class="collapse" id="loggedinMenu">
-          <ul class="nav nav-aside mg-b-0">
-            <li class="nav-item">
-              <a href="" class="nav-link"
-                ><i class="fas fa-user"></i> <span>View Profile</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link"
-                ><i class="fas fa-cog"></i> <span>Settings</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link"
-                ><i class="fas fa-question-circle"></i>
-                <span>Help Center</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link"
-                ><i class="fas fa-sign-out-alt"></i> <span>Sign Out</span></a
-              >
-            </li>
-          </ul>
+  <!-- Sidebar Header -->
+  <div class="aside-header">
+    <a href="index.html" class="aside-logo">LOGO HERE</a>
+    <a href="" class="aside-menu-link">
+      <i class="fas fa-bars"></i>
+    </a>
+  </div>
+  <!-- Sidebar Header -->
+
+  <!-- Sidebar Menu -->
+  <div class="aside-body">
+    <div class="aside-loggedin">
+      <div class="d-flex align-items-center">
+        <a href="" class="avatar avatar-offline"
+          ><img
+            src="../../../assets/images/paulgriffin.png"
+            class="rounded-circle"
+            alt=""
+        /></a>
+        <div class="aside-alert-link">
+          <a href=""><i class="fas fa-bell"></i></a>
         </div>
       </div>
-      <ul class="nav nav-aside">
-        <li class="nav-item active">
-          <a href="index.html" class="nav-link"
-            ><i class="far fa-chart-bar"></i> <span>Overview</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <a href="transactions.html" class="nav-link"
-            ><i class="fas fa-history"></i> <span>Transaction History</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <a href="calendar.html" class="nav-link"
-            ><i class="far fa-calendar-alt"></i> <span>Calendar</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <a href="overtime.html" class="nav-link"
-            ><i class="fas fa-briefcase"></i> <span>Overtime</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <a href="expenseclaims.html" class="nav-link"
-            ><i class="fas fa-receipt"></i> <span>Expense Claims</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <a href="bonus.html" class="nav-link"
-            ><i class="fas fa-plus"></i> <span>Bonus</span></a
-          >
-        </li>
-      </ul>
-    </div>
-    <!-- Sidebar Menu -->
-  </aside>
-  <!-- Sidebar -->
-  
-  <!-- Content -->
-  <div class="content ht-100v pd-0">
-    <!-- Header -->
-    <div class="content-header">
-              
-      <button class="btn btn-sm btn-primary btn-uppercase" data-toggle="modal" id="StartWorkButton" data-target="#StartWork"><i class="fas fa-sign-in-alt"></i> Start work</button>
-      
-      <!-- Start Work Modal -->
-      <div class="modal fade" id="StartWork" tabindex="-1" role="dialog" aria-labelledby="StartWorkCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-              
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="StartWorkLongTitle">Start Work</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>
-                  <div class="modal-body">
-                      <div id="webcam" align="center"></div>
-                      <br/>
-                      <div id="facialauthentication" style="display:none" align="center">
-                          <p class="tx-medium tx-15 tx-success mg-b-0">You have been authenticated</p><br/>
-                           <p class="tx-semibold mg-b-0">Current office location:</p>
-                          <p class="mg-b-0" align="center">Central London, United Kingdom</p>
-                      <br/>
-                      <button type="submit" class="btn btn-primary" (click)="clockIn()">Start work</button>
-                      </div>    
-                      <br/>
-                  </div>
-                  </div>
-             
-          </div>
+      <div class="aside-loggedin-user">
+        <a
+          href="#loggedinMenu"
+          class="d-flex align-items-center justify-content-between mg-b-2"
+          data-toggle="collapse"
+        >
+          <h4 class="tx-employeename mg-b-0">{{ employeeDetail.name }}</h4>
+          <i class="fas fa-chevron-down"></i>
+        </a>
       </div>
-      <!-- Start Work Modal -->
+      <div class="collapse" id="loggedinMenu">
+        <ul class="nav nav-aside mg-b-0">
+          <li class="nav-item">
+            <a href="" class="nav-link"
+              ><i class="fas fa-user"></i> <span>View Profile</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link"
+              ><i class="fas fa-cog"></i> <span>Settings</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link"
+              ><i class="fas fa-question-circle"></i>
+              <span>Help Center</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link"
+              ><i class="fas fa-sign-out-alt"></i> <span>Sign Out</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <ul class="nav nav-aside">
+      <li class="nav-item active">
+        <a href="index.html" class="nav-link"
+          ><i class="far fa-chart-bar"></i> <span>Overview</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a href="transactions.html" class="nav-link"
+          ><i class="fas fa-history"></i> <span>Transaction History</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a href="calendar.html" class="nav-link"
+          ><i class="far fa-calendar-alt"></i> <span>Calendar</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a href="overtime.html" class="nav-link"
+          ><i class="fas fa-briefcase"></i> <span>Overtime</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a href="expenseclaims.html" class="nav-link"
+          ><i class="fas fa-receipt"></i> <span>Expense Claims</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a href="bonus.html" class="nav-link"
+          ><i class="fas fa-plus"></i> <span>Bonus</span></a
+        >
+      </li>
+    </ul>
+  </div>
+  <!-- Sidebar Menu -->
+</aside>
+<!-- Sidebar -->
+
+<!-- Content -->
+<div class="content ht-100v pd-0">
+  <!-- Header -->
+  <div class="content-header">
+    <button
+      class="btn btn-sm btn-primary btn-uppercase"
+      data-toggle="modal"
+      id="StartWorkButton"
+      data-target="#StartWork"
+    >
+      <i class="fas fa-sign-in-alt"></i> Start work
+    </button>
+
+    <!-- Start Work Modal -->
+    <div
+      class="modal fade"
+      id="StartWork"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="StartWorkCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="StartWorkLongTitle">Start Work</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="webcam" align="center"></div>
+            <br />
+            <div id="facialauthentication" style="display:none" align="center">
+              <p class="tx-medium tx-15 tx-success mg-b-0">
+                You have been authenticated
+              </p>
+              <br />
+              <p class="tx-semibold mg-b-0">Current office location:</p>
+              <p class="mg-b-0" align="center">
+                Central London, United Kingdom
+              </p>
+              <br />
+              <button
+                type="submit"
+                class="btn btn-primary"
+                data-dismiss="modal"
+                (click)="clockIn()"
+              >
+                Start work
+              </button>
+            </div>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Start Work Modal -->
   </div>
   <!-- Header -->
-  
-    <!-- Dashboard -->
-    <div class="content-body">
-      <div class="container pd-x-0">
-        <div class="mg-b-20">
-          <div>
-            <h4>My Work Summary</h4>
+
+  <!-- Dashboard -->
+  <div class="content-body">
+    <div class="container pd-x-0">
+      <div class="mg-b-20">
+        <div>
+          <h4>My Work Summary</h4>
+        </div>
+      </div>
+
+      <div class="row row-xs">
+        <!-- Wallet Balance -->
+        <div class="col-12">
+          <div class="card card-body">
+            <div class="d-md-flex align-items-center justify-content-between">
+              <div class="media align-sm-items-center">
+                <div class="avatar d-none d-sm-block">
+                  <span class="avatar-initial rounded-circle bg-teal"
+                    ><i class="fas fa-wallet"></i
+                  ></span>
+                </div>
+                <div class="mg-l-15">
+                  <h6 class="tx-15 tx-medium mg-b-5">
+                    Wallet Balance
+                    <span class="tx-normal tx-color-grey">(in Griffs)</span>
+                  </h6>
+                  <h2 class="tx-30 tx-semibold mg-b-0">$10,501.43</h2>
+                </div>
+              </div>
+              <button class="btn btn-sm btn-secondary btn-uppercase">
+                <i class="fas fa-minus-square"></i> Withdraw funds
+              </button>
+            </div>
           </div>
         </div>
-  
-        <div class="row row-xs">
-          <!-- Wallet Balance -->
-          <div class="col-12">
-            <div class="card card-body">
-              <div class="d-md-flex align-items-center justify-content-between">
-                <div class="media align-sm-items-center">
-                  <div class="avatar d-none d-sm-block">
-                    <span class="avatar-initial rounded-circle bg-teal"
-                      ><i class="fas fa-wallet"></i
-                    ></span>
-                  </div>
-                  <div class="mg-l-15">
-                    <h6 class="tx-15 tx-medium mg-b-5">
-                      Wallet Balance
-                      <span class="tx-normal tx-color-grey">(in Griffs)</span>
-                    </h6>
-                    <h2 class="tx-30 tx-semibold mg-b-0">$10,501.43</h2>
-                  </div>
-                </div>
-                <button class="btn btn-sm btn-secondary btn-uppercase">
-                  <i class="fas fa-minus-square"></i> Withdraw funds
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- Wallet Balance -->
-  
-          <!-- Wallet Balance Chart -->
-          <div class="col-lg-8 col-xl-7 mg-t-10">
-            <div class="card card-crypto">
-              <div
-                class="card-header pd-y-8 d-sm-flex align-items-center justify-content-between"
-              >
-                <nav class="nav nav-line">
-                  <a href="" class="nav-link active">Week</a>
-                  <a href="" class="nav-link">Month</a>
-                  <a href="" class="nav-link">Year</a>
-                  <a href="" class="nav-link">All</a>
-                </nav>
-                <div class="tx-13 tx-color-grey align-items-center">
-                  <a href="" class="dateselect-link"
-                    >05/11/2019 <i class="fas fa-chevron-down"></i
-                  ></a>
-                  <span>to</span>
-                  <a href="" class="dateselect-link"
-                    >11/11/2019 <i class="fas fa-chevron-down"></i
-                  ></a>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="walletbalance-chart">
-                  <div id="flotChart" class="flot-chart"></div>
-                </div>
-                <br />
-              </div>
-            </div>
-          </div>
-          <!-- Wallet Balance Chart -->
-  
-          <!-- Recent Transactions -->
-          <div class="col-lg-4 col-xl-5 mg-t-10">
-            <div class="card">
-              <div
-                class="card-header d-flex align-items-center justify-content-between"
-              >
-                <h6 class="mg-b-0">Recent Transaction History</h6>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex pd-sm-x-20">
-                  <div class="avatar d-none d-sm-block">
-                    <span class="avatar-initial rounded-circle bg-teal"
-                      ><i class="fas fa-building"></i
-                    ></span>
-                  </div>
-                  <div class="pd-sm-l-10">
-                    <p class="tx-medium mg-b-0">Standard Work Payment</p>
-                    <small class="tx-12 tx-color-grey mg-b-0"
-                      >11 Nov 2019, 6:01pm</small
-                    >
-                  </div>
-                  <div class="mg-l-auto text-right">
-                    <p class="tx-medium tx-15 tx-success mg-b-0">+ $300.00</p>
-                    <small class="tx-12 mg-b-0">8 hrs of standard work</small>
-                  </div>
-                </li>
-                <li class="list-group-item d-flex pd-sm-x-20">
-                  <div class="avatar d-none d-sm-block">
-                    <span class="avatar-initial rounded-circle bg-indigo op-7"
-                      ><i class="fas fa-briefcase"></i
-                    ></span>
-                  </div>
-                  <div class="pd-sm-l-10">
-                    <p class="tx-medium mg-b-0">Overtime Work Payment</p>
-                    <small class="tx-12 tx-color-grey mg-b-0"
-                      >10 Nov 2019, 9:14pm</small
-                    >
-                  </div>
-                  <div class="mg-l-auto text-right">
-                    <p class="tx-medium tx-15 tx-success mg-b-0">+ $80.50</p>
-                    <small class="tx-12 mg-b-0">3 hrs of overtime work</small>
-                  </div>
-                </li>
-                <li class="list-group-item d-flex pd-sm-x-20">
-                  <div class="avatar d-none d-sm-block">
-                    <span class="avatar-initial rounded-circle bg-orange op-7"
-                      ><i class="fas fa-sign-out-alt"></i
-                    ></span>
-                  </div>
-                  <div class="pd-sm-l-10">
-                    <p class="tx-medium mg-b-2">Fund Withdrawal</p>
-                    <small class="tx-12 tx-color-grey mg-b-0"
-                      >09 Nov 2019, 10:32pm</small
-                    >
-                  </div>
-                  <div class="mg-l-auto text-right">
-                    <p class="tx-medium tx-15 tx-danger mg-b-0">- $923.59</p>
-                    <small class="tx-12 mg-b-0">Converted to GBP 1,237.84</small>
-                  </div>
-                </li>
-                <li class="list-group-item d-flex pd-sm-x-20">
-                  <div class="avatar d-none d-sm-block">
-                    <span class="avatar-initial rounded-circle bg-pink op-7"
-                      ><i class="fas fa-receipt"></i
-                    ></span>
-                  </div>
-                  <div class="pd-sm-l-10">
-                    <p class="tx-medium mg-b-0">Sep Expense Claims</p>
-                    <small class="tx-12 tx-color-grey mg-b-0"
-                      >08 Nov 2019, 2:30pm</small
-                    >
-                  </div>
-                  <div class="mg-l-auto text-right">
-                    <p class="tx-medium tx-15 tx-success mg-b-0">+ $129.50</p>
-                    <small class="tx-12 mg-b-0">Expense claim #1234</small>
-                  </div>
-                </li>
-                <li class="list-group-item d-flex pd-sm-x-20">
-                  <div class="avatar d-none d-sm-block">
-                    <span class="avatar-initial rounded-circle bg-lightblue"
-                      ><i class="fas fa-plus"></i
-                    ></span>
-                  </div>
-                  <div class="pd-sm-l-10">
-                    <p class="tx-medium mg-b-0">Bonus Payment</p>
-                    <small class="tx-12 tx-color-grey mg-b-0"
-                      >06 Nov 2019, 12:02am</small
-                    >
-                  </div>
-                  <div class="mg-l-auto text-right">
-                    <p class="tx-medium tx-15 tx-success mg-b-0">+ $2,500.00</p>
-                    <small class="tx-12 mg-b-0">Achieved Aug sales target</small>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-footer text-center tx-13">
-                <a href="transactions.html" class="viewtransactions-link"
-                  >View all transactions <i class="fas fa-chevron-down"></i
+        <!-- Wallet Balance -->
+
+        <!-- Wallet Balance Chart -->
+        <div class="col-lg-8 col-xl-7 mg-t-10">
+          <div class="card card-crypto">
+            <div
+              class="card-header pd-y-8 d-sm-flex align-items-center justify-content-between"
+            >
+              <nav class="nav nav-line">
+                <a href="" class="nav-link active">Week</a>
+                <a href="" class="nav-link">Month</a>
+                <a href="" class="nav-link">Year</a>
+                <a href="" class="nav-link">All</a>
+              </nav>
+              <div class="tx-13 tx-color-grey align-items-center">
+                <a href="" class="dateselect-link"
+                  >05/11/2019 <i class="fas fa-chevron-down"></i
+                ></a>
+                <span>to</span>
+                <a href="" class="dateselect-link"
+                  >11/11/2019 <i class="fas fa-chevron-down"></i
                 ></a>
               </div>
             </div>
-          </div>
-          <!-- Recent Transactions -->
-  
-          <!-- Performance -->
-          <div class="col-lg-4 mg-t-10">
-            <div class="card">
-              <div class="card-header">
-                <h6 class="mg-b-0">Work Performance</h6>
+            <div class="card-body">
+              <div class="walletbalance-chart">
+                <div id="flotChart" class="flot-chart"></div>
               </div>
-              <div class="card-body pd-y-10">
-                <div class="d-flex align-items-baseline">
-                  <h1 class="tx-40 tx-normal mg-b-5 mg-r-5 mg-t-10">9.80</h1>
-                  <p class="tx-13 tx-color-grey mg-l-8">
-                    <span class="tx-medium tx-success"
-                      ><i class="fas fa-arrow-up"></i> 5.40%</span
-                    >
+              <br />
+            </div>
+          </div>
+        </div>
+        <!-- Wallet Balance Chart -->
+
+        <!-- Recent Transactions -->
+        <div class="col-lg-4 col-xl-5 mg-t-10">
+          <div class="card">
+            <div
+              class="card-header d-flex align-items-center justify-content-between"
+            >
+              <h6 class="mg-b-0">Recent Transaction History</h6>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex pd-sm-x-20">
+                <div class="avatar d-none d-sm-block">
+                  <span class="avatar-initial rounded-circle bg-teal"
+                    ><i class="fas fa-building"></i
+                  ></span>
+                </div>
+                <div class="pd-sm-l-10">
+                  <p class="tx-medium mg-b-0">Standard Work Payment</p>
+                  <small class="tx-12 tx-color-grey mg-b-0"
+                    >11 Nov 2019, 6:01pm</small
+                  >
+                </div>
+                <div class="mg-l-auto text-right">
+                  <p class="tx-medium tx-15 tx-success mg-b-0">+ $300.00</p>
+                  <small class="tx-12 mg-b-0">8 hrs of standard work</small>
+                </div>
+              </li>
+              <li class="list-group-item d-flex pd-sm-x-20">
+                <div class="avatar d-none d-sm-block">
+                  <span class="avatar-initial rounded-circle bg-indigo op-7"
+                    ><i class="fas fa-briefcase"></i
+                  ></span>
+                </div>
+                <div class="pd-sm-l-10">
+                  <p class="tx-medium mg-b-0">Overtime Work Payment</p>
+                  <small class="tx-12 tx-color-grey mg-b-0"
+                    >10 Nov 2019, 9:14pm</small
+                  >
+                </div>
+                <div class="mg-l-auto text-right">
+                  <p class="tx-medium tx-15 tx-success mg-b-0">+ $80.50</p>
+                  <small class="tx-12 mg-b-0">3 hrs of overtime work</small>
+                </div>
+              </li>
+              <li class="list-group-item d-flex pd-sm-x-20">
+                <div class="avatar d-none d-sm-block">
+                  <span class="avatar-initial rounded-circle bg-orange op-7"
+                    ><i class="fas fa-sign-out-alt"></i
+                  ></span>
+                </div>
+                <div class="pd-sm-l-10">
+                  <p class="tx-medium mg-b-2">Fund Withdrawal</p>
+                  <small class="tx-12 tx-color-grey mg-b-0"
+                    >09 Nov 2019, 10:32pm</small
+                  >
+                </div>
+                <div class="mg-l-auto text-right">
+                  <p class="tx-medium tx-15 tx-danger mg-b-0">- $923.59</p>
+                  <small class="tx-12 mg-b-0">Converted to GBP 1,237.84</small>
+                </div>
+              </li>
+              <li class="list-group-item d-flex pd-sm-x-20">
+                <div class="avatar d-none d-sm-block">
+                  <span class="avatar-initial rounded-circle bg-pink op-7"
+                    ><i class="fas fa-receipt"></i
+                  ></span>
+                </div>
+                <div class="pd-sm-l-10">
+                  <p class="tx-medium mg-b-0">Sep Expense Claims</p>
+                  <small class="tx-12 tx-color-grey mg-b-0"
+                    >08 Nov 2019, 2:30pm</small
+                  >
+                </div>
+                <div class="mg-l-auto text-right">
+                  <p class="tx-medium tx-15 tx-success mg-b-0">+ $129.50</p>
+                  <small class="tx-12 mg-b-0">Expense claim #1234</small>
+                </div>
+              </li>
+              <li class="list-group-item d-flex pd-sm-x-20">
+                <div class="avatar d-none d-sm-block">
+                  <span class="avatar-initial rounded-circle bg-lightblue"
+                    ><i class="fas fa-plus"></i
+                  ></span>
+                </div>
+                <div class="pd-sm-l-10">
+                  <p class="tx-medium mg-b-0">Bonus Payment</p>
+                  <small class="tx-12 tx-color-grey mg-b-0"
+                    >06 Nov 2019, 12:02am</small
+                  >
+                </div>
+                <div class="mg-l-auto text-right">
+                  <p class="tx-medium tx-15 tx-success mg-b-0">+ $2,500.00</p>
+                  <small class="tx-12 mg-b-0">Achieved Aug sales target</small>
+                </div>
+              </li>
+            </ul>
+            <div class="card-footer text-center tx-13">
+              <a href="transactions.html" class="viewtransactions-link"
+                >View all transactions <i class="fas fa-chevron-down"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- Recent Transactions -->
+
+        <!-- Performance -->
+        <div class="col-lg-4 mg-t-10">
+          <div class="card">
+            <div class="card-header">
+              <h6 class="mg-b-0">Work Performance</h6>
+            </div>
+            <div class="card-body pd-y-10">
+              <div class="d-flex align-items-baseline">
+                <h1 class="tx-40 tx-normal mg-b-5 mg-r-5 mg-t-10">9.80</h1>
+                <p class="tx-13 tx-color-grey mg-l-8">
+                  <span class="tx-medium tx-success"
+                    ><i class="fas fa-arrow-up"></i> 5.40%</span
+                  >
+                </p>
+              </div>
+              <h6
+                class="tx-uppercase tx-semibold tx-10 tx-color-performance mg-b-20"
+              >
+                Excellent
+              </h6>
+
+              <table class="table-dashboard">
+                <tbody>
+                  <tr>
+                    <td>
+                      <div
+                        class="wd-12 ht-12 rounded-circle bd bd-3 bd-primary"
+                      ></div>
+                    </td>
+                    <td class="tx-medium">Excellent</td>
+                    <td class="text-right">3,007</td>
+                    <td class="text-right">50%</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div
+                        class="wd-12 ht-12 rounded-circle bd bd-3 bd-success"
+                      ></div>
+                    </td>
+                    <td class="tx-medium">Very Good</td>
+                    <td class="text-right">1,674</td>
+                    <td class="text-right">25%</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div
+                        class="wd-12 ht-12 rounded-circle bd bd-3 bd-warning"
+                      ></div>
+                    </td>
+                    <td class="tx-medium">Good</td>
+                    <td class="text-right">125</td>
+                    <td class="text-right">6%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- Performance -->
+
+        <!-- Performance Chart -->
+        <div class="col-lg-5 mg-t-10">
+          <div class="card">
+            <div class="card-header">
+              <h6 class="mg-b-0">Hours Worked in the Past Week</h6>
+            </div>
+            <div class="card-body pd-lg-25">
+              <div class="col-lg-12">
+                <div class="chart-two mg-b-10 mg-t-10">
+                  <canvas id="chartBar"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Performance Chart -->
+
+        <!-- Leaves & MCs -->
+        <div class="col-lg-12 col-xl-3 mg-t-10">
+          <!-- Leaves -->
+          <div class="card mg-b-10">
+            <div class="card-body pd-y-20 pd-x-25">
+              <div class="row row-sm">
+                <div class="col-12">
+                  <h3 class="tx-normal mg-b-5">13</h3>
+                  <h6 class="tx-12 tx-semibold tx-uppercase tx-primary mg-b-5">
+                    Days of Leaves Left
+                  </h6>
+                  <p class="tx-11 tx-color-grey mg-b-0">
+                    You can take up to 13 days of leaves till 31 Dec.
                   </p>
                 </div>
-                <h6
-                  class="tx-uppercase tx-semibold tx-10 tx-color-performance mg-b-20"
-                >
-                  Excellent
-                </h6>
-  
-                <table class="table-dashboard">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div
-                          class="wd-12 ht-12 rounded-circle bd bd-3 bd-primary"
-                        ></div>
-                      </td>
-                      <td class="tx-medium">Excellent</td>
-                      <td class="text-right">3,007</td>
-                      <td class="text-right">50%</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div
-                          class="wd-12 ht-12 rounded-circle bd bd-3 bd-success"
-                        ></div>
-                      </td>
-                      <td class="tx-medium">Very Good</td>
-                      <td class="text-right">1,674</td>
-                      <td class="text-right">25%</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div
-                          class="wd-12 ht-12 rounded-circle bd bd-3 bd-warning"
-                        ></div>
-                      </td>
-                      <td class="tx-medium">Good</td>
-                      <td class="text-right">125</td>
-                      <td class="text-right">6%</td>
-                    </tr>
-                  </tbody>
-                </table>
               </div>
             </div>
           </div>
-          <!-- Performance -->
-  
-          <!-- Performance Chart -->
-          <div class="col-lg-5 mg-t-10">
-            <div class="card">
-              <div class="card-header">
-                <h6 class="mg-b-0">Hours Worked in the Past Week</h6>
-              </div>
-              <div class="card-body pd-lg-25">
-                <div class="col-lg-12">
-                  <div class="chart-two mg-b-10 mg-t-10">
-                    <canvas id="chartBar"></canvas>
-                  </div>
+          <!-- Leaves -->
+
+          <!-- MCs -->
+          <div class="card mg-b-10">
+            <div class="card-body pd-y-20 pd-x-25">
+              <div class="row row-sm">
+                <div class="col-12">
+                  <h3 class="tx-normal mg-b-5">6</h3>
+                  <h6 class="tx-12 tx-semibold tx-uppercase tx-pink mg-b-5">
+                    Medical Leaves
+                  </h6>
+                  <p class="tx-11 tx-color-grey mg-b-0">
+                    You have utilised 6 days of medical leaves as of 11 Nov.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Performance Chart -->
-  
-          <!-- Leaves & MCs -->
-          <div class="col-lg-12 col-xl-3 mg-t-10">
-            <!-- Leaves -->
-            <div class="card mg-b-10">
-              <div class="card-body pd-y-20 pd-x-25">
-                <div class="row row-sm">
-                  <div class="col-12">
-                    <h3 class="tx-normal mg-b-5">13</h3>
-                    <h6 class="tx-12 tx-semibold tx-uppercase tx-primary mg-b-5">
-                      Days of Leaves Left
-                    </h6>
-                    <p class="tx-11 tx-color-grey mg-b-0">
-                      You can take up to 13 days of leaves till 31 Dec.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Leaves -->
-  
-            <!-- MCs -->
-            <div class="card mg-b-10">
-              <div class="card-body pd-y-20 pd-x-25">
-                <div class="row row-sm">
-                  <div class="col-12">
-                    <h3 class="tx-normal mg-b-5">6</h3>
-                    <h6 class="tx-12 tx-semibold tx-uppercase tx-pink mg-b-5">
-                      Medical Leaves
-                    </h6>
-                    <p class="tx-11 tx-color-grey mg-b-0">
-                      You have utilised 6 days of medical leaves as of 11 Nov.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- MCs -->
-          </div>
-          <!-- Leaves & MCs -->
+          <!-- MCs -->
         </div>
+        <!-- Leaves & MCs -->
       </div>
     </div>
-    <!-- Dashboard -->
   </div>
-  
+  <!-- Dashboard -->
+</div>

@@ -19,6 +19,8 @@ export class PreHomeComponent implements OnInit {
       this.employeeDetail = data.data;
       console.log(this.employeeDetail)
       window.sessionStorage.setItem("employeeDetail", JSON.stringify(data.data))
+      window.sessionStorage.setItem("employeeId", data.data._id)
+      window.sessionStorage.setItem("salaryRate", data.data.salaryRate)
     })
   }
 
