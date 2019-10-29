@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../service/data.service';
+import { EthcontractService } from '../service/ethcontract.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,22 +8,46 @@ import { DataService } from '../service/data.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  employeeDetail: any;
+  accounts: any;
+  transferFrom = "0x48EcE0Ae91d0b77D41eE67AE71508DfF154FCc61";
+  balance = "0 ETH";
+  transferTo = "";
+  amount = 0;
+  remarks = "";
 
-  constructor(private dataService: DataService) { }
-
-  ngOnInit() {
-    // this.employeeDetail = JSON.parse(window.sessionStorage.getItem("employeeDetail"));
-    let employeeId = "5daee7026fb70b0f746dd37b";
-    this.dataService.getEmployeeDetails(employeeId).subscribe((data: any) => {
-      this.employeeDetail = data.data;
-      console.log(this.employeeDetail)
-      window.sessionStorage.setItem("employeeDetail", JSON.stringify(data.data))
-    })
-    
-// {"deductRate":0,"_id":"5daee7026fb70b0f746dd37b","create_date":"2019-10-22T11:24:50.182Z","name":"Paul
-// Griffin","gender":"Male","email":"paul.griffin@griffin.com","phone":9123456,"jobTitle":"CEO","jobType":"manager","salaryRate":100,"__v":0}
-
+  constructor(private ethcontractService: EthcontractService) {
+    this.initAndDisplayAccount();
   }
 
+  ngOnInit() {
+  }
+
+  initAndDisplayAccount = () => {
+    let that = this;
+    this.ethcontractService.getAccountInfo().then(function (acctInfo: any) {
+      that.transferFrom = acctInfo.fromAccount;
+      that.balance = acctInfo.balance;
+      console.log(that.transferFrom);
+      console.log(that.balance)
+    }).catch(function (error) {
+      console.log(error);
+    });
+  };
+  transferEther(event) {
+    let that = this;
+    console.log("From:" + this.transferFrom)
+
+    console.log("To:" + this.transferTo)
+    this.ethcontractService.transferEther(
+      this.transferFrom,
+      this.transferTo,
+      this.amount,
+      this.remarks
+    ).then(function () {
+      that.initAndDisplayAccount();
+    }).catch(function (error) {
+      console.log(error);
+      that.initAndDisplayAccount();
+    });
+  }
 }
