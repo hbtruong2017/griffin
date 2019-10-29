@@ -14,7 +14,8 @@ export const environment = {
 
   GET_EMPLOYEE_DETAILS: SERVER_URL + 'employees/',
   CLOCK_IN_URl_POST: SERVER_URL + 'timesheet',
-  CLOCK_OUT_URl_POST: SERVER_URL + 'timesheet/'
+  CLOCK_OUT_URl_POST: SERVER_URL + 'timesheet/',
+  GET_TIMESHEET_URL: SERVER_URL + 'timesheet/'
 };
 
 /*
