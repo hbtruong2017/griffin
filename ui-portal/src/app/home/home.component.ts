@@ -43,5 +43,6 @@ export class HomeComponent implements OnInit {
     this.dataService.clockOut(this.employeeId, clockOutRequest).subscribe((data:any) => {
       console.log(data);
     })
+    
   }
 }
