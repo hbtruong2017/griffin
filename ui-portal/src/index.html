@@ -35,6 +35,10 @@
     <script type="text/javascript" src="assets/js/webcam.js"></script>
 
     <script>
+      $(window).on('load',function(){
+            $('#PaymentSuccess').modal('show');
+        });
+        
       $(document).ready(function(){
       $("#StartWorkButton").click(function(){
           $("#StartWork").modal("show");
