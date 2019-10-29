@@ -48,7 +48,7 @@ exports.view = function(req, res) {
     });
   });
 };
-// Handle update contact info
+// Handle update employee info
 exports.update = function(req, res) {
   Contact.findById(req.params.id, function(err, contact) {
     if (err) res.send(err);
