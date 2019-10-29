@@ -9,11 +9,11 @@ import { EthcontractService } from '../service/ethcontract.service';
 })
 export class ProfileComponent implements OnInit {
   accounts: any;
-  transferFrom = "0x48EcE0Ae91d0b77D41eE67AE71508DfF154FCc61";
-  balance = "0 ETH";
-  transferTo = "";
-  amount = 0;
-  remarks = "";
+  transferFrom: string = "0x592237E4A645145A32E08E787f5c216E4F915552";
+  balance: string = "0 ETH";
+  transferTo: string = "0xC1a082E97f666Cbf9C31290aAf49C17c03Beed0c";
+  amount: number = 5;
+  remarks = "Test 1";
 
   constructor(private ethcontractService: EthcontractService) {
     this.initAndDisplayAccount();

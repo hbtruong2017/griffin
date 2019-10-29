@@ -6,6 +6,7 @@ declare let require: any;
 declare let window: any;
 let tokenAbi = require("../../../../sc/build/contracts/StandardPayment.json")
 let TruffleContract = require("@truffle/contract")
+// let Web3 = require("web3");
 
 @Injectable({
   providedIn: 'root'
@@ -15,17 +16,24 @@ export class EthcontractService {
   private contracts: {};
 
   constructor() {
-    if (typeof window.web3 !== 'undefined') {
-      this.web3Provider = window.web3.currentProvider;
-    } else {  
-      this.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
-    }
+    // if (typeof window.web3 !== 'undefined') {
+    //   this.web3Provider = window.web3.currentProvider;
+    // } else {  
+    //   this.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
+    //   // this.web3Provider = new Web3.providers.HttpProvider('http://127.0.0.1:7545');
+    // }
+    this.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
     window.web3 = new Web3(this.web3Provider);
   }
 
   getAccountInfo() {
     return new Promise((resolve, reject) => {
+      // window.web3 = new Web3(this.web3Provider);
+      console.log(window.web3)
       window.web3.eth.getCoinbase(function (err, account) {
+        console.log(account)
+        console.log(err)
+
         if (err === null) {
           window.web3.eth.getBalance(account, function (err, balance) {
             if (err === null) {
