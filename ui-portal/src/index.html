@@ -32,6 +32,53 @@
     <script src="assets/js/aside.js"></script>
     <script src="assets/js/chart_sampledata.js"></script>
     <script src="assets/js/chart.flot.js"></script>
+    <script type="text/javascript" src="assets/js/webcam.js"></script>
+
+    <script>
+      $(window).on('load',function(){
+            $('#PaymentSuccess').modal('show');
+        });
+        
+      $(document).ready(function(){
+      $("#StartWorkButton").click(function(){
+          $("#StartWork").modal("show");
+      });
+          $("#StartWork").on('shown.bs.modal', function () {
+            Webcam.set({
+        width: 465,
+        height: 300
+              });
+              Webcam.attach( '#webcam' );
+              
+              setTimeout(function(){
+       $('#facialauthentication').show();
+     },2000);
+          });
+      });
+      </script>
+
+    <script>
+      $(document).ready(function(){
+      $("#EndWorkButton").click(function(){
+          $("#EndWork").modal("show");
+      });
+          $("#EndWork").on('shown.bs.modal', function () {
+            Webcam.set({
+        width: 465,
+        height: 300
+              });
+              Webcam.attach( '#webcam' );
+              
+              setTimeout(function(){
+              $('#facialauthentication').show();
+              },2000);
+              
+              setTimeout(function(){
+              $('#endworkpayment').show();
+              },3000);
+          });
+      });
+      </script>
     <!-- JS -->
 
 </body>

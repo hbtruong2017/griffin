@@ -13,7 +13,7 @@
     <div class="aside-body">
       <div class="aside-loggedin">
         <div class="d-flex align-items-center">
-          <a href="" class="avatar avatar-online"
+          <a href="" class="avatar avatar-offline"
             ><img
               src="../../../assets/images/paulgriffin.png"
               class="rounded-circle"
@@ -100,79 +100,39 @@
   <div class="content ht-100v pd-0">
     <!-- Header -->
     <div class="content-header">
-      <!-- <div class="workinprogress">
-        <h6 class="tx-15 mg-t-15">2 hours of work left</h6>
-        <div class="progress op-7">
-          <div
-            class="progress-bar wd-75p"
-            role="progressbar"
-            aria-valuenow="75"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          ></div>
-        </div>
-        <p class="tx-color-grey tx-12">
-          Started work at 9:03am, 12 Nov 2019. Office location: London.
-        </p>
-      </div> -->
-  
-      <button
-        class="btn btn-sm btn-primary btn-uppercase"
-        data-toggle="modal"
-        data-target="#EndWork"
-        (click)="clockIn()"
-      >
-        Start work
-      </button>
-  
-      <!-- End Work Modal -->
-      <div
-        class="modal fade"
-        id="EndWork"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="EndWorkCenterTitle"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="EndWorkLongTitle">End Work</h5>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p class="tx-semibold mg-b-0">WORK IN PROGRESS...</p>
-              <p class="mg-b-0">Clocked in timestamp</p>
-              <p class="mg-b-0">"You have worked for xx.xx hours"</p>
-              <p class="mg-b-0">“You will be paid xx.xx Griffs”</p>
-  
-              <div class="form-group">
-                <div class="row">
-                  <p class="mg-b-0"></p>
-                </div>
-                <textarea
-                  class="form-control"
-                  rows="2"
-                  placeholder="Write some description (optional)"
-                ></textarea>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">End work</button>
-            </div>
+              
+      <button class="btn btn-sm btn-primary btn-uppercase" data-toggle="modal" id="StartWorkButton" data-target="#StartWork"><i class="fas fa-sign-in-alt"></i> Start work</button>
+      
+      <!-- Start Work Modal -->
+      <div class="modal fade" id="StartWork" tabindex="-1" role="dialog" aria-labelledby="StartWorkCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="StartWorkLongTitle">Start Work</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <div id="webcam" align="center"></div>
+                      <br/>
+                      <div id="facialauthentication" style="display:none" align="center">
+                          <p class="tx-medium tx-15 tx-success mg-b-0">You have been authenticated</p><br/>
+                           <p class="tx-semibold mg-b-0">Current office location:</p>
+                          <p class="mg-b-0" align="center">Central London, United Kingdom</p>
+                      <br/>
+                      <button type="submit" class="btn btn-primary">Start work</button>
+                      </div>    
+                      <br/>
+                  </div>
+                  </div>
+             
           </div>
-        </div>
       </div>
-      <!-- End Work Modal -->
-    </div>
-    <!-- Header -->
+      <!-- Start Work Modal -->
+  </div>
+  <!-- Header -->
   
     <!-- Dashboard -->
     <div class="content-body">

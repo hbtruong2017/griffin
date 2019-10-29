@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SubmitLoanComponent } from './submit-loan/submit-loan.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PreHomeComponent } from './pre-home/pre-home.component';
+import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PreHomeComponent } from './pre-home/pre-home.component';
     SplashComponent,
     SubmitLoanComponent,
     ProfileComponent,
-    PreHomeComponent
+    PreHomeComponent,
+    PaymentSuccessComponent
   ],
   imports: [
     BrowserModule,

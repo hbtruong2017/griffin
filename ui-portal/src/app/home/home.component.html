@@ -116,63 +116,69 @@
       </p>
     </div>
 
-    <button
-      class="btn btn-sm btn-primary btn-uppercase"
-      data-toggle="modal"
-      data-target="#EndWork"
-    >
-      <i class="fas fa-sign-out-alt"></i> End work
-    </button>
+    <button class="btn btn-sm btn-primary btn-uppercase" data-toggle="modal" id="EndWorkButton" data-target="#EndWork"><i class="fas fa-sign-out-alt"></i> End work</button>
 
     <!-- End Work Modal -->
-    <div
-      class="modal fade"
-      id="EndWork"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="EndWorkCenterTitle"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="EndWork" tabindex="-1" role="dialog" aria-labelledby="EndWorkCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="EndWorkLongTitle">End Work</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p class="tx-semibold mg-b-0">WORK IN PROGRESS...</p>
-            <p class="mg-b-0">Clocked in timestamp</p>
-            <p class="mg-b-0">"You have worked for xx.xx hours"</p>
-            <p class="mg-b-0">“You will be paid xx.xx Griffs”</p>
-
-            <form [formGroup]="clockOutForm">
-            <div class="form-group">
-              <div class="row">
-                <p class="mg-b-0"></p>
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="EndWorkLongTitle">End Work</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
               </div>
-              <textarea
-                class="form-control"
-                rows="2"
-                formControlName="description"
-                placeholder="Write some description (optional)"
-              ></textarea>
-            </div>
-          </form>
+              <div class="modal-body">
+                  <div id="webcam" align="center"></div>
+                <br/>
+                  <div id="facialauthentication" style="display:none" align="center">
+                      <p class="tx-medium tx-15 tx-success mg-b-0">You have been authenticated</p><br/>
+                       <p class="tx-semibold mg-b-0">Current office location:</p>
+                      <p class="mg-b-0">Central London, United Kingdom</p><br/>
+                  </div><hr/><br/>
+                  <div id="endworkpayment" style="display:none">
+                      <div class="row col-12">
+                          <div class="col">
+                              <p class="tx-15 tx-semibold mg-b-0"><i class="far fa-calendar-alt"></i>Clocked in timestamp:</p>
+                          </div>
+                          <div class="col text-right">
+                              <p class="tx-15 tx-color-grey mg-b-0">9:02am on 11 Nov 2019</p>
+                          </div>
+                      </div><br/>
+                      <div class="row col-12">
+                          <div class="col">
+                              <p class="tx-15 tx-semibold mg-b-0"><i class="far fa-clock"></i>Hours clocked in:</p>
+                          </div>
+                          <div class="col text-right">
+                              <p class="tx-15 tx-color-grey mg-b-0">8 hours</p>
+                          </div>
+                      </div><br/>
+                      <div class="row col-12">
+                           <div class="col">
+                              <p class="tx-15 tx-semibold mg-b-0"><i class="far fa-paper-plane"></i>Payment amount:</p>
+                          </div>
+                          <div class="col text-right">
+                              <p class="tx-15 tx-color-grey mg-b-0 text-right">$150.00</p>
+                              <p class="tx-12 tx-color-grey mg-b-0 text-right">(Wallet ID: #123456)</p>
+                          </div>
+                      </div><br/>
+                      <div class="row col-12">
+                          <div class="col">
+                              <p class="tx-15 tx-semibold mg-b-10"><i class="far fa-building"></i>Work description:</p>
+                              <div class="form-group">
+                             <textarea class="form-control" rows="4" placeholder="Briefly write what you have done at work today..."></textarea>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">End work</button>
+              </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">End work</button>
-          </div>
-        </div>
       </div>
-    </div>
-    <!-- End Work Modal -->
+  </div>
+  <!-- End Work Modal -->
   </div>
   <!-- Header -->
 
