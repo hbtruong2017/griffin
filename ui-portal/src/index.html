@@ -36,6 +36,25 @@
 
     <script>
       $(document).ready(function(){
+      $("#StartWorkButton").click(function(){
+          $("#StartWork").modal("show");
+      });
+          $("#StartWork").on('shown.bs.modal', function () {
+            Webcam.set({
+        width: 465,
+        height: 300
+              });
+              Webcam.attach( '#webcam' );
+              
+              setTimeout(function(){
+       $('#facialauthentication').show();
+     },2000);
+          });
+      });
+      </script>
+
+    <script>
+      $(document).ready(function(){
       $("#EndWorkButton").click(function(){
           $("#EndWork").modal("show");
       });
