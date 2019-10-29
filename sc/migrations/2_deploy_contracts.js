@@ -1,5 +1,5 @@
-var Payment = artifacts.require("./Payment.sol");
+var Standard = artifacts.require("./StandardPayment.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(Payment);
+  deployer.deploy(Standard);
 };
