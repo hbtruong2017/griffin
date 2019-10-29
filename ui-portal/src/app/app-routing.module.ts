@@ -6,7 +6,7 @@ import { PreHomeComponent } from './pre-home/pre-home.component';
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home' },  
+  { path: '', pathMatch: 'full', redirectTo: 'profile' },  
   { path: 'prehome', component: PreHomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
