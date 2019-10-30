@@ -203,7 +203,7 @@
               </div>
               <br />
               <div class="row col-12">
-                <form [formGroup]="clockOutForm">
+                <form *ngIf="clockOutForm" [formGroup]="clockOutForm">
                   <div class="col">
                     <p class="tx-15 tx-semibold mg-b-10">
                       <i class="far fa-building"></i>Work description:
