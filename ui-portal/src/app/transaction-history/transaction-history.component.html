@@ -1,0 +1,630 @@
+<!-- Sidebar -->
+<aside class="aside aside-fixed">
+    <!-- Sidebar Header -->
+    <div class="aside-header">
+      <a href="index.html" class="aside-logo">LOGO HERE</a>
+      <a href="" class="aside-menu-link">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+    <!-- Sidebar Header -->
+  
+    <!-- Sidebar Menu -->
+    <div class="aside-body">
+      <div class="aside-loggedin">
+        <div class="d-flex align-items-center">
+          <a href="" class="avatar avatar-online"
+            ><img
+              src="../../../assets/images/paulgriffin.png"
+              class="rounded-circle"
+              alt=""
+          /></a>
+          <div class="aside-alert-link">
+            <a href=""><i class="fas fa-bell"></i></a>
+          </div>
+        </div>
+        <div class="aside-loggedin-user">
+          <a
+            href="#loggedinMenu"
+            class="d-flex align-items-center justify-content-between mg-b-2"
+            data-toggle="collapse"
+          >
+            <h4 class="tx-employeename mg-b-0">{{ employeeDetail.name }}</h4>
+            <i class="fas fa-chevron-down"></i>
+          </a>
+        </div>
+        <div class="collapse" id="loggedinMenu">
+          <ul class="nav nav-aside mg-b-0">
+            <li class="nav-item">
+              <a href="" class="nav-link"
+                ><i class="fas fa-user"></i> <span>View Profile</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link"
+                ><i class="fas fa-cog"></i> <span>Settings</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link"
+                ><i class="fas fa-question-circle"></i>
+                <span>Help Center</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link"
+                ><i class="fas fa-sign-out-alt"></i> <span>Sign Out</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <ul class="nav nav-aside">
+        <li class="nav-item active">
+          <a href="index.html" class="nav-link"
+            ><i class="far fa-chart-bar"></i> <span>Overview</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="transactions.html" class="nav-link"
+            ><i class="fas fa-history"></i> <span>Transaction History</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="calendar.html" class="nav-link"
+            ><i class="far fa-calendar-alt"></i> <span>Calendar</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="overtime.html" class="nav-link"
+            ><i class="fas fa-briefcase"></i> <span>Overtime</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="expenseclaims.html" class="nav-link"
+            ><i class="fas fa-receipt"></i> <span>Expense Claims</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="bonus.html" class="nav-link"
+            ><i class="fas fa-plus"></i> <span>Bonus</span></a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- Sidebar Menu -->
+  </aside>
+  <!-- Sidebar -->
+  
+  <!-- Content -->
+  <div class="content ht-100v pd-0">
+    <!-- Header -->
+    <div class="content-header">
+      <div class="workinprogress">
+        <h6 class="tx-15 mg-t-15">2 hours of work left</h6>
+        <div class="progress op-7">
+          <div
+            class="progress-bar wd-75p"
+            role="progressbar"
+            aria-valuenow="75"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+        <p class="tx-color-grey tx-12">
+          Started work at 9:03am, 12 Nov 2019. Office location: London.
+        </p>
+      </div>
+  
+      <button
+        class="btn btn-sm btn-primary btn-uppercase"
+        data-toggle="modal"
+        id="EndWorkButton"
+        data-target="#EndWork"
+      >
+        <i class="fas fa-sign-out-alt"></i> End work
+      </button>
+  
+      <!-- End Work Modal -->
+      <div
+        class="modal fade"
+        id="EndWork"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="EndWorkCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="EndWorkLongTitle">End Work</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id="webcam" align="center"></div>
+              <br />
+              <div id="facialauthentication" style="display:none" align="center">
+                <p class="tx-medium tx-15 tx-success mg-b-0">
+                  You have been authenticated
+                </p>
+                <br />
+                <p class="tx-semibold mg-b-0">Current office location:</p>
+                <p class="mg-b-0">Central London, United Kingdom</p>
+                <br />
+              </div>
+              <hr />
+              <br />
+              <div id="endworkpayment" style="display:none">
+                <div class="row col-12">
+                  <div class="col">
+                    <p class="tx-15 tx-semibold mg-b-0">
+                      <i class="far fa-calendar-alt"></i>Clocked in timestamp:
+                    </p>
+                  </div>
+                  <div class="col text-right">
+                    <p class="tx-15 tx-color-grey mg-b-0">
+                      {{ timeIn }}
+                    </p>
+                  </div>
+                </div>
+                <br />
+                <div class="row col-12">
+                  <div class="col">
+                    <p class="tx-15 tx-semibold mg-b-0">
+                      <i class="far fa-clock"></i>Hours clocked in:
+                    </p>
+                  </div>
+                  <div class="col text-right">
+                    <p class="tx-15 tx-color-grey mg-b-0">{{ duration }}</p>
+                  </div>
+                </div>
+                <br />
+                <div class="row col-12">
+                  <div class="col">
+                    <p class="tx-15 tx-semibold mg-b-0">
+                      <i class="far fa-paper-plane"></i>Payment amount:
+                    </p>
+                  </div>
+                  <div class="col text-right">
+                    <p class="tx-15 tx-color-grey mg-b-0 text-right">
+                      {{ 8 * salaryRate }}
+                    </p>
+                    <p class="tx-12 tx-color-grey mg-b-0 text-right">
+                      (Wallet ID: #123456)
+                    </p>
+                  </div>
+                </div>
+                <br />
+                <div class="row col-12">
+                  <form *ngIf="clockOutForm" [formGroup]="clockOutForm">
+                    <div class="col">
+                      <p class="tx-15 tx-semibold mg-b-10">
+                        <i class="far fa-building"></i>Work description:
+                      </p>
+                      <div class="form-group">
+                        <textarea
+                          formControlName="description"
+                          class="form-control"
+                          rows="4"
+                          placeholder="Briefly write what you have done at work today..."
+                        ></textarea>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+                (click)="clockOut()"
+              >
+                End work
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Work Modal -->
+    </div>
+    <!-- Header -->
+  
+   <!-- Transaction History -->
+   <div class="content-body">
+    <div class="container pd-x-0">
+        <div class="mg-b-20">
+            <div>
+              <h4>My Past Transactions</h4>
+            </div>
+        </div>
+        
+        <ul class="nav nav-tabs" id="Tab" role="tablist">
+            <li class="nav-item">
+            <a class="nav-link active" id="alltransactions-tab" data-toggle="tab" href="#alltransactions" role="tab" aria-controls="alltransactions" aria-selected="true">All Transactions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="standardwork-tab" data-toggle="tab" href="#standardwork" role="tab" aria-controls="standardwork" aria-selected="false">Standard Work</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="overtime-tab" data-toggle="tab" href="#overtime" role="tab" aria-controls="overtime" aria-selected="false">Overtime</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="expenseclaims-tab" data-toggle="tab" href="#expenseclaims" role="tab" aria-controls="expenseclaims" aria-selected="false">Expense Claims</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="bonus-tab" data-toggle="tab" href="#bonus" role="tab" aria-controls="bonus" aria-selected="false">Bonus Payments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="withdrawals-tab" data-toggle="tab" href="#withdrawals" role="tab" aria-controls="withdrawals" aria-selected="false">Withdrawals</a>
+            </li>
+        </ul>
+        
+        <div class="tab-content bd bd-gray-300 bd-t-0 pd-20" id="TabContent">
+            <div class="tab-pane fade show active" id="alltransactions" role="tabpanel" aria-labelledby="alltransactions-tab">
+                <table class="table">
+                    <thead>
+                        <div class="d-sm-flex align-items-center mg-t-25 justify-content-between">
+                            <nav class="nav nav-line">
+                                <button class="btn btn-primary">Week</button>
+                                <button class="btn btn-outline-primary">Month</button>
+                                <button class="btn btn-outline-primary">Year</button>
+                            </nav>
+                            <div class="tx-13 tx-color-grey align-items-center">
+                                <a href="" class="dateselect-link">05/11/2019 <i class="fas fa-chevron-down"></i></a>
+                                <span>to</span>
+                                <a href="" class="dateselect-link">11/11/2019 <i class="fas fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                    <tr>
+                    <th scope="col" style="width: 16%"><br/>Transaction Date</th>
+                    <th scope="col" style="width: 16%"><br/>Transaction Time</th>
+                    <th scope="col" style="width: 16%"><br/>Amount</th>
+                    <th scope="col" style="width: 16%"><br/>Work Type</th>
+                    <th scope="col" style="width: 36%"><br/>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>Standard Work</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>11 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>Overtime Work</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>11 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>Expense Claims</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>11 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>Bonus</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>11 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-danger tx-medium">- $350.00</td>
+                            <td>Withdrawal</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>11 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>Standard Work</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="standardwork" role="tabpanel" aria-labelledby="standardwork-tab">
+                <table class="table">
+                    <thead>
+                        <div class="d-sm-flex align-items-center mg-t-25 justify-content-between">
+                            <nav class="nav nav-line">
+                                <button class="btn btn-primary">Week</button>
+                                <button class="btn btn-outline-primary">Month</button>
+                                <button class="btn btn-outline-primary">Year</button>
+                            </nav>
+                            <div class="tx-13 tx-color-grey align-items-center">
+                                <a href="" class="dateselect-link">05/11/2019 <i class="fas fa-chevron-down"></i></a>
+                                <span>to</span>
+                                <a href="" class="dateselect-link">11/11/2019 <i class="fas fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                    <tr>
+                    <th scope="col" style="width: 16%"><br/>Transaction Date</th>
+                    <th scope="col" style="width: 16%"><br/>Transaction Time</th>
+                    <th scope="col" style="width: 16%"><br/>Amount</th>
+                    <th scope="col" style="width: 16%"><br/>Work Period</th>
+                    <th scope="col" style="width: 36%"><br/>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>9.00am - 6.00pm<br/>11 November 2019</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>09 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>9.01am - 6.01pm<br/>09 November 2019</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>08 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>9.00am - 6.00pm<br/>08 November 2019</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>06 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>9.00am - 6.00pm<br/>06 November 2019</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="overtime" role="tabpanel" aria-labelledby="overtime-tab">
+                <table class="table">
+                    <thead>
+                        <div class="d-sm-flex align-items-center mg-t-25 justify-content-between">
+                            <nav class="nav nav-line">
+                                <button class="btn btn-primary">Week</button>
+                                <button class="btn btn-outline-primary">Month</button>
+                                <button class="btn btn-outline-primary">Year</button>
+                            </nav>
+                            <div class="tx-13 tx-color-grey align-items-center">
+                                <a href="" class="dateselect-link">05/11/2019 <i class="fas fa-chevron-down"></i></a>
+                                <span>to</span>
+                                <a href="" class="dateselect-link">11/11/2019 <i class="fas fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                    <tr>
+                    <th scope="col" style="width: 16%"><br/>Transaction Date</th>
+                    <th scope="col" style="width: 16%"><br/>Transaction Time</th>
+                    <th scope="col" style="width: 16%"><br/>Amount</th>
+                    <th scope="col" style="width: 16%"><br/>Overtime Work Period</th>
+                    <th scope="col" style="width: 36%"><br/>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>9.00am - 6.00pm<br/>11 November 2019</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>09 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>9.01am - 6.01pm<br/>09 November 2019</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>08 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>9.00am - 6.00pm<br/>08 November 2019</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>06 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>9.00am - 6.00pm<br/>06 November 2019</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="expenseclaims" role="tabpanel" aria-labelledby="expenseclaims-tab">
+                <table class="table">
+                    <thead>
+                        <div class="d-sm-flex align-items-center mg-t-25 justify-content-between">
+                            <nav class="nav nav-line">
+                                <button class="btn btn-primary">Week</button>
+                                <button class="btn btn-outline-primary">Month</button>
+                                <button class="btn btn-outline-primary">Year</button>
+                            </nav>
+                            <div class="tx-13 tx-color-grey align-items-center">
+                                <a href="" class="dateselect-link">05/11/2019 <i class="fas fa-chevron-down"></i></a>
+                                <span>to</span>
+                                <a href="" class="dateselect-link">11/11/2019 <i class="fas fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                    <tr>
+                    <th scope="col" style="width: 16%"><br/>Transaction Date</th>
+                    <th scope="col" style="width: 16%"><br/>Transaction Time</th>
+                    <th scope="col" style="width: 16%"><br/>Amount</th>
+                    <th scope="col" style="width: 16%"><br/>Expense Claim ID</th>
+                    <th scope="col" style="width: 36%"><br/>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>#1240</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>10 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>#1239</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>09 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>#1238</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>08 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>#1237</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>07 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">- $350.00</td>
+                            <td>#1236</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                        <tr>
+                            <td>06 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>#1235</td>
+                            <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>    
+            <div class="tab-pane fade" id="bonus" role="tabpanel" aria-labelledby="bonus-tab">
+                <table class="table">
+                    <thead>
+                        <div class="d-sm-flex align-items-center mg-t-25 justify-content-between">
+                            <nav class="nav nav-line">
+                                <button class="btn btn-primary">Week</button>
+                                <button class="btn btn-outline-primary">Month</button>
+                                <button class="btn btn-outline-primary">Year</button>
+                            </nav>
+                            <div class="tx-13 tx-color-grey align-items-center">
+                                <a href="" class="dateselect-link">05/11/2019 <i class="fas fa-chevron-down"></i></a>
+                                <span>to</span>
+                                <a href="" class="dateselect-link">11/11/2019 <i class="fas fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                    <tr>
+                    <th scope="col" style="width: 16%"><br/>Transaction Date</th>
+                    <th scope="col" style="width: 16%"><br/>Transaction Time</th>
+                    <th scope="col" style="width: 16%"><br/>Amount</th>
+                    <th scope="col" style="width: 16%"><br/>KPI</th>
+                    <th scope="col" style="width: 36%"><br/>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>Monthly sales target</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>10 September 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>Monthly sales target</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>23 August 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>13-month bonus</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>30 July 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-success tx-medium">+ $150.00</td>
+                            <td>Monthly sales target</td>
+                            <td>...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>   
+            <div class="tab-pane fade" id="withdrawals" role="tabpanel" aria-labelledby="withdrawals-tab">
+                <table class="table">
+                    <thead>
+                        <div class="d-sm-flex align-items-center mg-t-25 justify-content-between">
+                            <nav class="nav nav-line">
+                                <button class="btn btn-primary">Week</button>
+                                <button class="btn btn-outline-primary">Month</button>
+                                <button class="btn btn-outline-primary">Year</button>
+                            </nav>
+                            <div class="tx-13 tx-color-grey align-items-center">
+                                <a href="" class="dateselect-link">05/11/2019 <i class="fas fa-chevron-down"></i></a>
+                                <span>to</span>
+                                <a href="" class="dateselect-link">11/11/2019 <i class="fas fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                    <tr>
+                    <th scope="col" style="width: 20%"><br/>Transaction Date</th>
+                    <th scope="col" style="width: 20%"><br/>Transaction Time</th>
+                    <th scope="col" style="width: 20%"><br/>Amount</th>
+                    <th scope="col" style="width: 20%"><br/>Exchange Rate</th>
+                    <th scope="col" style="width: 20%"><br/>Amount in Local Currency</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-danger tx-medium">- $150.00</td>
+                            <td>1.2345</td>
+                            <td class="tx-danger tx-medium">- GBP 185.18</td>
+                        </tr>
+                        <tr>
+                            <td>10 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-danger tx-medium">- $350.00</td>
+                            <td>1.2345</td>
+                            <td class="tx-danger tx-medium">- GBP 432.08</td>
+                        </tr>
+                        <tr>
+                            <td>09 November 2019</td>
+                            <td>6.01pm</td>
+                            <td class="tx-danger tx-medium">- $150.00</td>
+                            <td>1.2345</td>
+                            <td class="tx-danger tx-medium">- GBP 185.18</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>   
+        </div>
+
+
+    </div>
+</div>
+<!-- Transaction History -->
+  </div>
+  
