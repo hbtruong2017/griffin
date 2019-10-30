@@ -12,6 +12,8 @@ import { SubmitLoanComponent } from './submit-loan/submit-loan.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PreHomeComponent } from './pre-home/pre-home.component';
 import { PaymentSuccessComponent } from './payment-success/payment-success.component';
+import { TransactionHistoryComponent } from './transaction-history/transaction-history.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PaymentSuccessComponent } from './payment-success/payment-success.compo
     SubmitLoanComponent,
     ProfileComponent,
     PreHomeComponent,
-    PaymentSuccessComponent
+    PaymentSuccessComponent,
+    TransactionHistoryComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

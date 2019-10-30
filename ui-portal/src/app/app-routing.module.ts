@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PreHomeComponent } from './pre-home/pre-home.component';
 import { PaymentSuccessComponent } from './payment-success/payment-success.component';
+import { TransactionHistoryComponent } from './transaction-history/transaction-history.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'paymentsuccess', component: PaymentSuccessComponent },
+  { path: 'history', component: TransactionHistoryComponent }
+
 ];
 
 @NgModule({
