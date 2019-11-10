@@ -21,6 +21,7 @@
     "@angular/router": "~8.2.9",
     "@truffle/contract": "^4.0.37",
     "@truffle/contract-schema": "3.0.16",
+    "@truffle/hdwallet-provider": "^1.0.23",
     "@truffle/interface-adapter": "0.3.0",
     "bootstrap": "^4.3.1",
     "font-awesome": "^4.7.0",
