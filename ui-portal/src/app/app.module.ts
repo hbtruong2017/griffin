@@ -12,6 +12,8 @@ import { PreHomeComponent } from './pre-home/pre-home.component';
 import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 import { TransactionHistoryComponent } from './transaction-history/transaction-history.component';
 import { LoginComponent } from './login/login.component';
+import { OvertimeComponent } from './overtime/overtime.component';
+import { BonusComponent } from './bonus/bonus.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { LoginComponent } from './login/login.component';
     PreHomeComponent,
     PaymentSuccessComponent,
     TransactionHistoryComponent,
-    LoginComponent
+    LoginComponent,
+    OvertimeComponent,
+    BonusComponent
   ],
   imports: [
     BrowserModule,

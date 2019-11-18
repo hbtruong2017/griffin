@@ -24,8 +24,8 @@ export class PaymentSuccessComponent implements OnInit {
 
   clockIn() {
     let clockInReq = {
-        employeeId: this.employeeId,
-	      employeeName: this.employeeDetail.name
+      employeeId: this.employeeId,
+      employeeName: this.employeeDetail.name
     }
     this.dataService.clockIn(clockInReq).subscribe((data: any) => {
       window.sessionStorage.setItem("timesheetId", data.id);

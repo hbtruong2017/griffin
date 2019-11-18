@@ -1,24 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="description" content="<title>Griffin$ - Global Payroll System</title>">
-    <meta name="author" content="IS445">
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="<title>Griffin$ - Global Payroll System</title>"
+    />
+    <meta name="author" content="IS445" />
     <base href="/" />
 
     <title>Griffin$ - Global Payroll System</title>
 
     <!-- assets/libraries -->
-    <link href="assets/libraries/fontawesome-5.6.1/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i">
-    <link rel="stylesheet" href="assets/libraries/bootstrap/css/bootstrap.min.css">
+    <link
+      href="assets/libraries/fontawesome-5.6.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/libraries/bootstrap/css/bootstrap.min.css"
+    />
     <!-- <link rel="stylesheet" href="css/styles.css"> -->
     <!-- assets/libraries -->
-      
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"
+    ></script>
+    <script src="assets/libraries/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#bonus-goal-progress").goalProgress({
+          goalAmount: 100000,
+          currentAmount: 80000,
+          textBefore: "$",
+          textAfter: " sales revenue"
+        });
+      });
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#bonus-goal-progress-2").goalProgress({
+          goalAmount: 50000,
+          currentAmount: 50000,
+          textBefore: "$",
+          textAfter: " sales revenue"
+        });
+      });
+    </script>
+    <!-- Goal Progress -->
   </head>
 
-<body>
-
+  <body>
     <app-root></app-root>
 
     <!-- JS -->
@@ -33,53 +69,77 @@
     <script src="assets/js/chart_sampledata.js"></script>
     <script src="assets/js/chart.flot.js"></script>
     <script type="text/javascript" src="assets/js/webcam.js"></script>
+    <script
+      type="text/javascript"
+      src="assets/libraries/goalprogress/goalProgress.js"
+    ></script>
 
     <script>
-      $(window).on('load',function(){
-            $('#PaymentSuccess').modal('show');
-        });
-        
-      $(document).ready(function(){
-      $("#StartWorkButton").click(function(){
+      $(window).on("load", function() {
+        $("#PaymentSuccess").modal("show");
+      });
+
+      $(document).ready(function() {
+        $("#StartWorkButton").click(function() {
           $("#StartWork").modal("show");
-      });
-          $("#StartWork").on('shown.bs.modal', function () {
-            Webcam.set({
-        width: 465,
-        height: 300
-              });
-              Webcam.attach( '#webcam' );
-              
-              setTimeout(function(){
-       $('#facialauthentication').show();
-     },2000);
+        });
+        $("#StartWork").on("shown.bs.modal", function() {
+          Webcam.set({
+            width: 465,
+            height: 300
           });
+          Webcam.attach("#webcam");
+
+          setTimeout(function() {
+            $("#facialauthentication").show();
+          }, 2000);
+        });
       });
-      </script>
+    </script>
 
     <script>
-      $(document).ready(function(){
-      $("#EndWorkButton").click(function(){
+      $(document).ready(function() {
+        $("#EndWorkButton").click(function() {
           $("#EndWork").modal("show");
-      });
-          $("#EndWork").on('shown.bs.modal', function () {
-            Webcam.set({
-        width: 465,
-        height: 300
-              });
-              Webcam.attach( '#webcam' );
-              
-              setTimeout(function(){
-              $('#facialauthentication').show();
-              },2000);
-              
-              setTimeout(function(){
-              $('#endworkpayment').show();
-              },3000);
+        });
+        $("#EndWork").on("shown.bs.modal", function() {
+          Webcam.set({
+            width: 465,
+            height: 300
           });
-      });
-      </script>
-    <!-- JS -->
+          Webcam.attach("#webcam");
 
-</body>
+          setTimeout(function() {
+            $("#facialauthentication").show();
+          }, 2000);
+
+          setTimeout(function() {
+            $("#endworkpayment").show();
+          }, 3000);
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function() {
+        $("#bonus-goal-progress").goalProgress({
+          goalAmount: 100000,
+          currentAmount: 80000,
+          textBefore: "$",
+          textAfter: " sales revenue"
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function() {
+        $("#bonus-goal-progress-2").goalProgress({
+          goalAmount: 50000,
+          currentAmount: 50000,
+          textBefore: "$",
+          textAfter: " sales revenue"
+        });
+      });
+    </script>
+    <!-- JS -->
+  </body>
 </html>

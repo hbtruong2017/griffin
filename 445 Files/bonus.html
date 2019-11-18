@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="<title>Griffin$ - Global Payroll System</title>">
+    <meta name="author" content="IS445">
+
+    <title>Griffin$ - Global Payroll System</title>
+
+    <!-- Libraries -->
+    <link href="libraries/fontawesome-5.6.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i">
+    <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Libraries -->
+    
+    <!-- Goal Progress -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="libraries/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="libraries/goalprogress/goalProgress.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+          $('#bonus-goal-progress').goalProgress({
+            goalAmount: 100000,
+            currentAmount: 80000,
+            textBefore: '$',
+            textAfter: ' sales revenue'
+          });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+          $('#bonus-goal-progress-2').goalProgress({
+            goalAmount: 50000,
+            currentAmount: 50000,
+            textBefore: '$',
+            textAfter: ' sales revenue'
+          });
+        });
+    </script>
+    <!-- Goal Progress -->
+  </head>
+
+<body>
+    
+    <!-- Sidebar -->
+    <aside class="aside aside-fixed">
+        
+        <!-- Sidebar Header -->
+        <div class="aside-header">
+            <img src="images/nikelogo.png" width="80px" height="32px" alt="">
+             <a href="" class="aside-menu-link">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+        <!-- Sidebar Header -->
+        
+        <!-- Sidebar Menu -->
+        <div class="aside-body">
+            <div class="aside-loggedin">
+                <div class="d-flex align-items-center">
+                    <a href="" class="avatar avatar-offline"><img src="images/paulgriffin.png" class="rounded-circle" alt=""></a>
+                    <div class="aside-alert-link">
+                      <a href=""><i class="fas fa-bell"></i></a>
+                    </div>
+                </div>
+                <div class="aside-loggedin-user">
+                    <a href="#loggedinMenu" class="d-flex align-items-center justify-content-between mg-b-2" data-toggle="collapse">
+                          <h4 class="tx-employeename mg-b-0">Paul Griffin</h4>
+                          <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+                <div class="collapse" id="loggedinMenu">
+                    <ul class="nav nav-aside mg-b-0">
+                          <li class="nav-item"><a href="" class="nav-link"><i class="fas fa-user"></i> <span>View Profile</span></a></li>
+                          <li class="nav-item"><a href="" class="nav-link"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                          <li class="nav-item"><a href="" class="nav-link"><i class="fas fa-question-circle"></i> <span>Help Center</span></a></li>
+                          <li class="nav-item"><a href="" class="nav-link"><i class="fas fa-sign-out-alt"></i> <span>Sign Out</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="nav nav-aside">
+                <li class="nav-item"><a href="index.html" class="nav-link"><i class="far fa-chart-bar"></i> <span>Overview</span></a></li>
+                <li class="nav-item"><a href="transactions.html" class="nav-link"><i class="fas fa-history"></i> <span>Transaction History</span></a></li>
+                <li class="nav-item"><a href="calendar.html" class="nav-link"><i class="far fa-calendar-alt"></i> <span>Calendar</span></a></li>
+                <li class="nav-item"><a href="overtime.html" class="nav-link"><i class="fas fa-briefcase"></i> <span>Overtime</span></a></li>
+                <li class="nav-item"><a href="expenseclaims.html" class="nav-link"><i class="fas fa-receipt"></i> <span>Expense Claims</span></a></li>
+                <li class="nav-item active"><a href="bonus.html" class="nav-link"><i class="fas fa-plus"></i> <span>Bonus</span></a></li>
+            </ul>
+        </div>
+        <!-- Sidebar Menu -->
+    </aside>
+    <!-- Sidebar -->
+    
+    <!-- Content -->
+    <div class="content ht-100v pd-0">
+        <!-- Header -->
+        <div class="content-header">
+              
+            <button class="btn btn-sm btn-primary btn-uppercase" data-toggle="modal" id="StartWorkButton" data-target="#StartWork"><i class="fas fa-sign-in-alt"></i> Start work</button>
+            
+            <!-- Start Work Modal -->
+            <div class="modal fade" id="StartWork" tabindex="-1" role="dialog" aria-labelledby="StartWorkCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="StartWorkLongTitle">Start Work</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="webcam" align="center"></div>
+	                        <script type="text/javascript" src="js/webcam.js"></script><br/>
+                            <div id="facialauthentication" style="display:none" align="center">
+                                <p class="tx-medium tx-15 tx-success mg-b-0">You have been authenticated</p><br/>
+                                 <p class="tx-semibold mg-b-0">Current office location:</p>
+                                <p class="mg-b-0" align="center">Central London, United Kingdom</p>
+                            <br/>
+                            <button type="submit" class="btn btn-primary">Start work</button>
+                            </div>    
+                            <br/>
+                        </div>
+                        </div>
+                   
+                </div>
+            </div>
+            <!-- Start Work Modal -->
+        </div>
+        <!-- Header -->
+        
+        <!-- Bonus -->
+        <div class="content-body">
+            <div class="container pd-x-0">
+                <div class="mg-b-20">
+                    <div>
+                      <h4>Bonus Overview</h4>
+                    </div>
+                </div>
+                <div class="row row-xs">
+                    <div class="col-7">
+                        <div class="goalContainer">
+                            <p class="tx-15 tx-color-grey mg-b-0" style="margin-bottom:10px;">In progress</p>
+                            <h5 class="mg-b-0">Nike Air Max - UK Sales Revenue Target (Nov 2019)</h5>
+                            <div class="tx-medium tx-16 mg-l-auto text-right" style="margin-bottom:10px;">Goal: $100,000</div>
+                            <div id="bonus-goal-progress"></div>
+                            <p class="tx-14 tx-color-grey mg-b-0">You have achieved <strong>80%</strong> of your sales revenue target</p>
+                            <br/>
+                            <p class="tx-16 mg-b-0">You will receive <strong>$2,000</strong> commission when you reach your sales revenue target.</p>
+                            
+                            <br/><hr/><br/>
+                            <p class="tx-15 tx-success mg-b-0" style="margin-bottom:10px;"><i class="fas fa-check-circle" style="margin-right:6px;"></i>Completed</p>
+                            <h5 class="mg-b-0">Nike Dri-FIT - Ireland Sales Revenue Target (Nov 2019)</h5>
+                            <div class="tx-medium tx-16 mg-l-auto text-right" style="margin-bottom:10px;">Goal: $50,000</div>
+                            <div id="bonus-goal-progress-2"></div>
+                            <p class="tx-14 tx-color-grey mg-b-0">Congratulations, you have achieved <strong>100%</strong> of your sales revenue target!</p>
+                            <br/>
+                            <p class="tx-16 mg-b-0"><strong>$1,500</strong> commission has been sent to you on 15 Nov 2019.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-5">
+                                            <div class="card">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <h6 class="mg-b-0">Recent Bonus Payments</h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex pd-sm-x-20">
+                                <div class="pd-sm-l-10">
+                                  <p class="tx-medium mg-b-0">Nike Air Max UK Sales Target</p>
+                                  <small class="tx-12 tx-color-grey mg-b-0">Oct 2019</small>
+                                </div>
+                                <div class="mg-l-auto text-right">
+                                  <p class="tx-medium tx-15 tx-success mg-b-0">+ $1,250.00</p>
+                                  <small class="tx-12 mg-b-0">27 Oct 2019, 5:23pm</small>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex pd-sm-x-20">
+                                <div class="pd-sm-l-10">
+                                  <p class="tx-medium mg-b-0">Nike Dri-FIT Ireland Sales Target</p>
+                                  <small class="tx-12 tx-color-grey mg-b-0">Oct 2019</small>
+                                </div>
+                                <div class="mg-l-auto text-right">
+                                  <p class="tx-medium tx-15 tx-success mg-b-0">+ $2,400.00</p>
+                                  <small class="tx-12 mg-b-0">30 Oct 2019, 3:58pm</small>
+                                </div>
+                            </li>
+                           <li class="list-group-item d-flex pd-sm-x-20">
+                                <div class="pd-sm-l-10">
+                                  <p class="tx-medium mg-b-0">Nike Metcon Flyknit UK Sales Target</p>
+                                  <small class="tx-12 tx-color-grey mg-b-0">Sep 2019</small>
+                                </div>
+                                <div class="mg-l-auto text-right">
+                                  <p class="tx-medium tx-15 tx-success mg-b-0">+ $350.00</p>
+                                  <small class="tx-12 mg-b-0">18 Sep 2019, 8:45pm</small>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex pd-sm-x-20">
+                                <div class="pd-sm-l-10">
+                                  <p class="tx-medium mg-b-0">Nike Flex Trainers Scotland Sales Target</p>
+                                  <small class="tx-12 tx-color-grey mg-b-0">Sep 2019</small>
+                                </div>
+                                <div class="mg-l-auto text-right">
+                                  <p class="tx-medium tx-15 tx-success mg-b-0">+ $695.00</p>
+                                  <small class="tx-12 mg-b-0">14 Sep 2019, 11:43am</small>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex pd-sm-x-20">
+                                <div class="pd-sm-l-10">
+                                  <p class="tx-medium mg-b-0">Nike Air Max UK Sales Target</p>
+                                  <small class="tx-12 tx-color-grey mg-b-0">Aug 2019</small>
+                                </div>
+                                <div class="mg-l-auto text-right">
+                                  <p class="tx-medium tx-15 tx-success mg-b-0">+ $1,380.00</p>
+                                  <small class="tx-12 mg-b-0">31 Aug 2019, 8:31pm</small>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex pd-sm-x-20">
+                                <div class="pd-sm-l-10">
+                                  <p class="tx-medium mg-b-0">Nike Air Force 1 Ireland Sales Target</p>
+                                  <small class="tx-12 tx-color-grey mg-b-0">Aug 2019</small>
+                                </div>
+                                <div class="mg-l-auto text-right">
+                                  <p class="tx-medium tx-15 tx-success mg-b-0">+ $3,200.00</p>
+                                  <small class="tx-12 mg-b-0">21 Aug 2019, 2:57pm</small>
+                                </div>
+                            </li>
+                             <li class="list-group-item d-flex pd-sm-x-20">
+                                <div class="pd-sm-l-10">
+                                  <p class="tx-medium mg-b-0">Nike LeBron 17 Scotland Jul Sales Target</p>
+                                  <small class="tx-12 tx-color-grey mg-b-0">Jul 2019</small>
+                                </div>
+                                <div class="mg-l-auto text-right">
+                                  <p class="tx-medium tx-15 tx-success mg-b-0">+ $430.00</p>
+                                  <small class="tx-12 mg-b-0">29 Jul 2019, 1:34pm</small>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="card-footer text-center tx-13">
+                            <a href="transactions.html" class="viewtransactions-link">View all transactions <i class="fas fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+        <!-- Bonus -->
+    </div>
+
+    <!-- JS -->
+    <script src="libraries/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="libraries/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+   <script src="libraries/jquery.flot/jquery.flot.js"></script>
+    <script src="libraries/jquery.flot/jquery.flot.stack.js"></script>
+    <script src="libraries/jquery.flot/jquery.flot.resize.js"></script>
+    <script src="libraries/chart.js/Chart.bundle.min.js"></script>
+    <script src="js/aside.js"></script>
+    <script src="js/chart_sampledata.js"></script>
+    <script src="js/chart.flot.js"></script>
+    <!-- JS -->
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="<title>Griffin$ - Global Payroll System</title>">
+    <meta name="author" content="IS445">
+
+    <title>Griffin$ - Global Payroll System</title>
+
+    <!-- Libraries -->
+    <link href="libraries/fontawesome-5.6.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i">
+    <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Libraries -->
+  </head>
+
+<body>
+    
+    <!-- Sidebar -->
+    <aside class="aside aside-fixed">
+        
+        <!-- Sidebar Header -->
+        <div class="aside-header">
+            <img src="images/nikelogo.png" width="80px" height="32px" alt="">
+             <a href="" class="aside-menu-link">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+        <!-- Sidebar Header -->
+        
+        <!-- Sidebar Menu -->
+        <div class="aside-body">
+            <div class="aside-loggedin">
+                <div class="d-flex align-items-center">
+                    <a href="" class="avatar avatar-offline"><img src="images/paulgriffin.png" class="rounded-circle" alt=""></a>
+                    <div class="aside-alert-link">
+                      <a href=""><i class="fas fa-bell"></i></a>
+                    </div>
+                </div>
+                <div class="aside-loggedin-user">
+                    <a href="#loggedinMenu" class="d-flex align-items-center justify-content-between mg-b-2" data-toggle="collapse">
+                          <h4 class="tx-employeename mg-b-0">Paul Griffin</h4>
+                          <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+                <div class="collapse" id="loggedinMenu">
+                    <ul class="nav nav-aside mg-b-0">
+                          <li class="nav-item"><a href="" class="nav-link"><i class="fas fa-user"></i> <span>View Profile</span></a></li>
+                          <li class="nav-item"><a href="" class="nav-link"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                          <li class="nav-item"><a href="" class="nav-link"><i class="fas fa-question-circle"></i> <span>Help Center</span></a></li>
+                          <li class="nav-item"><a href="" class="nav-link"><i class="fas fa-sign-out-alt"></i> <span>Sign Out</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="nav nav-aside">
+                <li class="nav-item"><a href="index.html" class="nav-link"><i class="far fa-chart-bar"></i> <span>Overview</span></a></li>
+                <li class="nav-item"><a href="transactions.html" class="nav-link"><i class="fas fa-history"></i> <span>Transaction History</span></a></li>
+                <li class="nav-item"><a href="calendar.html" class="nav-link"><i class="far fa-calendar-alt"></i> <span>Calendar</span></a></li>
+                <li class="nav-item active"><a href="overtime.html" class="nav-link"><i class="fas fa-briefcase"></i> <span>Overtime</span></a></li>
+                <li class="nav-item"><a href="expenseclaims.html" class="nav-link"><i class="fas fa-receipt"></i> <span>Expense Claims</span></a></li>
+                <li class="nav-item"><a href="bonus.html" class="nav-link"><i class="fas fa-plus"></i> <span>Bonus</span></a></li>
+            </ul>
+        </div>
+        <!-- Sidebar Menu -->
+    </aside>
+    <!-- Sidebar -->
+    
+    <!-- Content -->
+    <div class="content ht-100v pd-0">
+        <!-- Header -->
+        <div class="content-header">
+              
+            <button class="btn btn-sm btn-primary btn-uppercase" data-toggle="modal" id="StartWorkButton" data-target="#StartWork"><i class="fas fa-sign-in-alt"></i> Start work</button>
+            
+            <!-- Start Work Modal -->
+            <div class="modal fade" id="StartWork" tabindex="-1" role="dialog" aria-labelledby="StartWorkCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="StartWorkLongTitle">Start Work</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="webcam" align="center"></div>
+	                        <script type="text/javascript" src="js/webcam.js"></script><br/>
+                            <div id="facialauthentication" style="display:none" align="center">
+                                <p class="tx-medium tx-15 tx-success mg-b-0">You have been authenticated</p><br/>
+                                 <p class="tx-semibold mg-b-0">Current office location:</p>
+                                <p class="mg-b-0" align="center">Central London, United Kingdom</p>
+                            <br/>
+                            <button type="submit" class="btn btn-primary">Start work</button>
+                            </div>    
+                            <br/>
+                        </div>
+                        </div>
+                   
+                </div>
+            </div>
+            <!-- Start Work Modal -->
+        </div>
+        <!-- Header -->
+        
+        <!-- Overtime -->
+        <div class="content-body">
+            <div class="container pd-x-0">
+                <div class="mg-b-20">
+                    <div>
+                      <h4>Overtime Payments</h4>
+                    </div>
+                </div>
+                
+                <ul class="nav nav-tabs" id="Tab" role="tablist">
+                    <li class="nav-item">
+                    <a class="nav-link active" id="employees-overtime-tab" data-toggle="tab" href="#employeesovertime" role="tab" aria-controls="employeesovertime" aria-selected="true">Employees' Overtime Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="my-overtime-tab" data-toggle="tab" href="#myovertime" role="tab" aria-controls="my-overtime-tab" aria-selected="false">My Overtime Jobs </a>
+                    </li>
+                </ul>
+                
+                <div class="tab-content bd bd-gray-300 bd-t-0 pd-20" id="TabContent">
+                    <div class="tab-pane fade show active" id="employeesovertime" role="tabpanel" aria-labelledby="employees-overtime-tab">
+                        <table class="table">
+                            <thead>
+                                <div class="d-sm-flex align-items-center mg-t-25 justify-content-between">
+                                    <nav class="nav nav-line">
+                                        <button class="btn btn-primary">Pending</button>
+                                        <button class="btn btn-outline-primary">Approved</button>
+                                        <button class="btn btn-outline-primary">Rejected</button>
+                                    </nav>
+                                </div>
+                            <tr>
+                            <th scope="col" style="width: 10%"><br/>Employee ID</th>
+                            <th scope="col" style="width: 13%"><br/>Employee Name</th>
+                            <th scope="col" style="width: 15%"><br/>Start Overtime Work</th>
+                            <th scope="col" style="width: 14%"><br/>End Overtime Work</th>
+                            <th scope="col" style="width: 19%"><br/>Work Description</th>
+                            <th scope="col" style="width: 10%"><br/>Amount</th>
+                            <th scope="col" style="width: 19%"><br/>Approve / Reject</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1234</td>
+                                    <td>Xavier Lur</td>
+                                    <td>11 November 2019, 6.00pm</td>
+                                    <td>11 November 2019, 9.07pm</td>
+                                    <td>Conference call with the Asia Pacific strategy team to discuss expansion plans in the region.</td>
+                                    <td class="tx-16"><strong>$75.00</strong></td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-success">Approve</button>
+                                        <button type="button" class="btn btn-outline-danger">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2342</td>
+                                    <td>Bang</td>
+                                    <td>10 November 2019, 6.00pm</td>
+                                    <td>10 November 2019, 8.11pm</td>
+                                    <td>Developed AR mobile application for new Nike Air Max.</td>
+                                    <td class="tx-16"><strong>$120.00</strong></td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-success">Approve</button>
+                                        <button type="button" class="btn btn-outline-danger">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4875</td>
+                                    <td>Timothy Soh</td>
+                                    <td>09 November 2019, 6.00pm</td>
+                                    <td>09 November 2019, 11.37pm</td>
+                                    <td>Meeting with event partners for upcoming Nike Air Max launch event.</td>
+                                    <td class="tx-16"><strong>$94.00</strong></td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-success">Approve</button>
+                                        <button type="button" class="btn btn-outline-danger">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6075</td>
+                                    <td>Rachess Tan</td>
+                                    <td>09 November 2019, 6.00pm</td>
+                                    <td>09 November 2019, 10.59pm</td>
+                                    <td>Worked on marketing strategy deck for new Nike Air Max campaign.</td>
+                                    <td class="tx-16"><strong>$76.00</strong></td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-success">Approve</button>
+                                        <button type="button" class="btn btn-outline-danger">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9833</td>
+                                    <td>William</td>
+                                    <td>08 November 2019, 6.00pm</td>
+                                    <td>08 November 2019, 11.31pm</td>
+                                    <td>Conference call with the US operations team to discuss new ops process.</td>
+                                    <td class="tx-16"><strong>$110.00</strong></td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-success">Approve</button>
+                                        <button type="button" class="btn btn-outline-danger">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9332</td>
+                                    <td>Hao Nan</td>
+                                    <td>11 November 2019, 6.02pm</td>
+                                    <td>11 November 2019, 9.07pm</td>
+                                    <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                                    <td class="tx-16"><strong>$84.00</strong></td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-success">Approve</button>
+                                        <button type="button" class="btn btn-outline-danger">Reject</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="myovertime" role="tabpanel" aria-labelledby="my-overtime-tab">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                            <th scope="col" style="width: 15%"><br/>Start Overtime Work</th>
+                            <th scope="col" style="width: 14%"><br/>End Overtime Work</th>
+                            <th scope="col" style="width: 19%"><br/>Work Description</th>
+                            <th scope="col" style="width: 10%"><br/>Amount</th>
+                            <th scope="col" style="width: 10%"><br/>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>13 November 2019, 6.02pm</td>
+                                    <td>13 November 2019, 9.15pm</td>
+                                    <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                                    <td class="tx-16"><strong>$80.00</strong></td>
+                                    <td class="tx-danger">Pending approval</td>        
+                                </tr>
+                                <tr>
+                                    <td>12 November 2019, 6.02pm</td>
+                                    <td>12 November 2019, 9.15pm</td>
+                                    <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                                    <td class="tx-16"><strong>$80.00</strong></td>
+                                    <td class="tx-danger">Pending approval</td>        
+                                </tr>
+                                <tr>
+                                    <td>11 November 2019, 6.02pm</td>
+                                    <td>11 November 2019, 9.15pm</td>
+                                    <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                                    <td class="tx-16"><strong>$80.00</strong></td>
+                                    <td>Approved</td> 
+                                </tr>
+                                <tr>
+                                    <td>10 November 2019, 6.02pm</td>
+                                    <td>10 November 2019, 9.15pm</td>
+                                    <td>Created slide deck on Q2 2019 financial results for CFO to review. Afternoon meeting with David from JP Morgan.</td>
+                                    <td class="tx-16"><strong>$80.00</strong></td>
+                                    <td>Approved</td>        
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+        
+            </div>
+        </div>
+        <!-- Overtime -->
+    </div>
+
+    <!-- JS -->
+    <script src="libraries/jquery/jquery.min.js"></script>
+    <script src="libraries/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="libraries/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="js/aside.js"></script>
+
+    <script>
+    $(document).ready(function(){
+    $("#StartWorkButton").click(function(){
+        $("#StartWork").modal("show");
+    });
+        $("#StartWork").on('shown.bs.modal', function () {
+          Webcam.set({
+			width: 465,
+			height: 300
+            });
+            Webcam.attach( '#webcam' );
+            
+            setTimeout(function(){
+     $('#facialauthentication').show();
+   },3000);
+        });
+    });
+    </script>
+    <!-- JS -->
+
+</body>
+</html>

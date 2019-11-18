@@ -29,7 +29,6 @@ export class EthcontractService {
   getAccountInfo() {
     return new Promise((resolve, reject) => {
       // window.web3 = new Web3(this.web3Provider);
-      console.log(window.web3)
       window.web3.eth.getCoinbase(function (err, account) {
         console.log(account)
         console.log(err)
@@ -46,6 +45,20 @@ export class EthcontractService {
       });
     });
   }
+
+  getEmployeeAccountInfo(account: any) {
+    return new Promise((resolve, reject) => {
+      // window.web3 = new Web3(this.web3Provider);
+          window.web3.eth.getBalance(account, function (err, balance) {
+            if (err === null) {
+              return resolve({ fromAccount: account, balance: window.web3.fromWei(balance, "ether") });
+            } else {
+              return reject("error!");
+            }
+          });
+    });
+  }
+
 
   transferEther(
     _transferFrom,

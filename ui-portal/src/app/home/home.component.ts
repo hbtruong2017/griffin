@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
   duration: any;
   salaryRate: any;
   timeIn: any;
+  employeeAccount: string = "0xC1a082E97f666Cbf9C31290aAf49C17c03Beed0c";
+  employeeBalance: any;
 
   constructor(private dataService: DataService, private router: Router, private ethcontractService: EthcontractService, private formBuilder: FormBuilder) { }
 
@@ -28,14 +30,19 @@ export class HomeComponent implements OnInit {
     this.timesheetId = window.sessionStorage.getItem("timesheetId");
     this.salaryRate = window.sessionStorage.getItem("salaryRate");
     this.timeIn = window.sessionStorage.getItem("timeIn");
-    // this.duration = 
+
     this.duration = 8;
+
+    this.employeeId = "5daee7026fb70b0f746dd37b";
+    this.dataService.getEmployeeDetails(this.employeeId).subscribe((data: any) => {
+      this.employeeDetail = data.data;
+    })
 
     this.clockOutForm = this.formBuilder.group({
       description: ['', Validators.required]
     })
-    console.log(this.clockOutForm)
-    console.log(this.duration)
+
+    this.employeeBalance = window.sessionStorage.getItem("employeeBalance")
   }
 
   clockOut() {
@@ -43,10 +50,15 @@ export class HomeComponent implements OnInit {
       description: this.clockOutForm.get("description").value
     }
     console.log(this.clockOutForm)
-    this.dataService.clockOut(this.employeeId, clockOutRequest).subscribe((data:any) => {
+    this.dataService.clockOut(this.timesheetId, clockOutRequest).subscribe((data:any) => {
       console.log(data);
     })
     this.transferEther();
+
+    this.ethcontractService.getEmployeeAccountInfo(this.employeeAccount).then((result:any) => {
+      this.employeeBalance = result.balance.c[0] + "." + ("" + result.balance.c[1]).slice(0,2);
+      window.sessionStorage.setItem("employeeBalance", this.employeeBalance )
+    })
   }
 
   transferEther() {
