@@ -35,13 +35,14 @@
         </div>
         <hr />
         <div class="signin-wrapper">
-          <form>
+          <form [formGroup]="loginForm">
             <div class="form-group">
               <label class="tx-16">Email address:</label>
               <input
                 type="email"
                 class="form-control"
                 placeholder="Your company email address"
+                formControlName="email"
               />
             </div>
             <div class="form-group">
@@ -55,7 +56,7 @@
               />
             </div>
             <br />
-            <button type="submit" class="btn btn-lg btn-primary" routerLink="/prehome">
+            <button type="submit" class="btn btn-lg btn-primary" (click)="goToHome()">
               Sign In
             </button>
           </form>

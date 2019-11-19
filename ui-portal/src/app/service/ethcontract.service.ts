@@ -4,7 +4,7 @@ import * as Web3 from "web3";
 
 declare let require: any;
 declare let window: any;
-let tokenAbi = require("../../../../sc/build/contracts/StandardPayment.json")
+let tokenAbi = require("../../../../sc/build/contracts/EditablePayment.json")
 let TruffleContract = require("@truffle/contract")
 // let Web3 = require("web3");
 

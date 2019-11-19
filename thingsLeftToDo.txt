@@ -1,0 +1,31 @@
+1. Login page
+	- Paul logs in --> Paul's page
+	- Rachess logs in --> Rachess's page
+	
+2. Prehome page
+	- Combine prehome + home + payment success
+		+ Hide and show startwork bar
+		+ Click start work --> show progress bar
+		+ From home, click end work --> Show success payment
+			+ "Back to dashboard" 
+				-- Refresh the page so wallet balance and transaction history has been updated
+				-- close the alert box
+			+ "Sign out" 
+				-- Go to Sign in page
+	- Show Paul and Rachess' face
+	- Balance: remove the "undefined"
+	- Chart not showing --> force refresh when load the page
+	- Recent transaction history and in /history page 
+		--> Click on "View all transactions" --> bring to /history page
+		--> call the API to update the first line
+
+3. Overtime page (Paul logs in)
+	- Update the first line of the table with Lou's overtime work 
+	- Click approve
+		--> the line disappeared
+		--> (if have time) do a transaction
+	
+	
+	
+	
+	

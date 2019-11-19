@@ -15,7 +15,7 @@
       <div class="d-flex align-items-center">
         <a href="" class="avatar avatar-online"
           ><img
-            src="../../../assets/images/paulgriffin.png"
+            src="{{imgLink}}"
             class="rounded-circle"
             alt=""
         /></a>
@@ -119,6 +119,7 @@
     <button
       class="btn btn-sm btn-primary btn-uppercase"
       data-toggle="modal"
+      data-dismiss="modal"
       id="EndWorkButton"
       data-target="#EndWork"
     >
@@ -227,7 +228,6 @@
               class="btn btn-primary"
               data-dismiss="modal"
               (click)="clockOut()"
-              data-target="#PaymentSuccess"
             >
               End work
             </button>
@@ -236,37 +236,6 @@
       </div>
     </div>
     <!-- End Work Modal -->
-
-     <!--Payment Success Modal -->
-     <div class="modal fade" id="PaymentSuccess" tabindex="-1" role="dialog" aria-labelledby="PaymentSuccessCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-          
-          <div class="modal-content">
-              <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                  <div class="row col-12">
-                      <div class="col text-center">
-                          <h2 class="tx-25 mg-b-0">Payment Success!</h2><br/>
-                          <p class="tx-25 tx-semibold tx-success mg-b-0">$150.00</p>
-                          <p class="tx-16 tx-color-grey mg-b-0">has been credited into your wallet.</p><br/><br/>
-                          <p class="tx-13 tx-color-grey mg-b-0">Transaction ID: #123456789</p>
-                          <p class="tx-13 tx-color-grey mg-b-0">Transaction made on: 11 Nov 2019, 6:01pm</p><br/>
-                          <a href="transactionhistory.html">View transaction</a><br/>
-                          
-                           <button type="button" class="btn btn-outline-primary" (click)="refreshPage()">Back to dashboard</button>
-                           <button type="button" class="btn btn-primary" routerLink="/login">Sign out</button>
-                      </div>
-                  </div><br/>
-              </div>
-          </div>
-         
-      </div>
-  </div>
-  <!-- Payment Success Modal -->
   </div>
   <!-- Header -->
 

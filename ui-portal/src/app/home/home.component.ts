@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   employeeId: any;
+  imgLink: string;
   timesheetId: any;
   employeeDetail: any;
   clockOutForm: FormGroup;
@@ -20,13 +21,27 @@ export class HomeComponent implements OnInit {
   timeIn: any;
   employeeAccount: string = "0xC1a082E97f666Cbf9C31290aAf49C17c03Beed0c";
   employeeBalance: any;
-  startWork: boolean = false;
+  startWork: boolean;
 
   constructor(private dataService: DataService, private router: Router, private ethcontractService: EthcontractService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    // this.employeeId = "5daee7026fb70b0f746dd37b";
-    this.employeeId = "5daee7026fb70b0f746dd37b";
+    let email = window.sessionStorage.getItem("email")
+    let credentials = {
+      "paul.griffin@nike.com": {
+        employeeId: "5daee7026fb70b0f746dd37b",
+        imgLink: "../../../assets/images/paulgriffin.png"
+      },
+      "rachess.tan@nike.com": {
+        employeeId: "5dd3f0b2c1486b23fc18ec07",
+        imgLink: "../../../assets/images/rachesstan.jpg"
+      }
+    }
+
+    this.employeeId = credentials[email].employeeId;
+    this.imgLink = credentials[email].imgLink;
+    this.startWork = JSON.parse(window.sessionStorage.getItem("startWork"))
+
     this.dataService.getEmployeeDetails(this.employeeId).subscribe((data: any) => {
       this.employeeDetail = data.data;
       this.salaryRate = data.data.salaryRate;
@@ -50,6 +65,7 @@ export class HomeComponent implements OnInit {
 
   clockIn() {
     this.startWork = true;
+    window.sessionStorage.setItem("startWork", "true")
 
     let clockInReq = {
       employeeId: this.employeeId,
@@ -58,14 +74,17 @@ export class HomeComponent implements OnInit {
     this.dataService.clockIn(clockInReq).subscribe((data: any) => {
       window.sessionStorage.setItem("timesheetId", data.id);
       window.sessionStorage.setItem("timeIn", data.data.timeIn);
+      window.location.reload();
     })
   }
 
   clockOut() {
     let currentTime = Date.now() as any;
+    this.startWork = false;
+    window.sessionStorage.setItem("startWork", "false")
 
     this.duration = 8;
-    
+
     let clockOutRequest = {
       description: this.clockOutForm.get("description").value
     }
@@ -74,31 +93,30 @@ export class HomeComponent implements OnInit {
 
     this.dataService.clockOut(this.timesheetId, clockOutRequest).subscribe((data: any) => {
       console.log(data);
+      this.transferEther();
+      // this.router.navigate(['/paymentsuccess']).then(() => {
+      //   window.location.reload();
+      // })
     })
-    this.transferEther();
 
-    this.ethcontractService.getEmployeeAccountInfo(this.employeeAccount).then((result: any) => {
-      this.employeeBalance = result.balance.c[0] + "." + ("" + result.balance.c[1]).slice(0, 2);
-      window.sessionStorage.setItem("employeeBalance", this.employeeBalance)
-    })
+    // this.ethcontractService.getEmployeeAccountInfo(this.employeeAccount).then((result: any) => {
+    //   this.employeeBalance = result.balance.c[0] + "." + ("" + result.balance.c[1]).slice(0, 2);
+    //   window.sessionStorage.setItem("employeeBalance", this.employeeBalance)
+    // })
+
   }
 
   transferEther() {
-    this.router.navigate(["/paymentsuccess"]);
     this.salaryRate = 0.1;
     let transferFrom = "0x48EcE0Ae91d0b77D41eE67AE71508DfF154FCc61"; // default
-    let transferTo = "0xC1a082E97f666Cbf9C31290aAf49C17c03Beed0c";
+    let transferTo = "0x0f2d31cDf370c0c9825a7452e8d9586Ecf2A12Cf";
     let amount = this.salaryRate * 8;
     let remarks = this.clockOutForm.get("description").value;
 
     this.ethcontractService.transferEther(transferFrom, transferTo, amount, remarks).then(function () {
-      console.log("Payment success")
+      console.log("PAYMENT MADE")
     }).catch(function (error) {
       console.log(error);
     });
-  }
-
-  refreshPage() {
-    window.location.reload();
   }
 }
