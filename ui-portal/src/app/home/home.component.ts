@@ -20,22 +20,25 @@ export class HomeComponent implements OnInit {
   timeIn: any;
   employeeAccount: string = "0xC1a082E97f666Cbf9C31290aAf49C17c03Beed0c";
   employeeBalance: any;
+  startWork: boolean = false;
 
   constructor(private dataService: DataService, private router: Router, private ethcontractService: EthcontractService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    let currentTime = Date.now() as any;
     // this.employeeId = "5daee7026fb70b0f746dd37b";
-    this.employeeId = window.sessionStorage.getItem("employeeId");
-    this.timesheetId = window.sessionStorage.getItem("timesheetId");
-    this.salaryRate = window.sessionStorage.getItem("salaryRate");
-    this.timeIn = window.sessionStorage.getItem("timeIn");
-
-    this.duration = 8;
-
     this.employeeId = "5daee7026fb70b0f746dd37b";
     this.dataService.getEmployeeDetails(this.employeeId).subscribe((data: any) => {
       this.employeeDetail = data.data;
+      this.salaryRate = data.data.salaryRate;
+
+      window.sessionStorage.setItem("employeeDetail", JSON.stringify(data.data))
+      window.sessionStorage.setItem("employeeId", data.data._id)
+      window.sessionStorage.setItem("salaryRate", data.data.salaryRate)
+
+      this.ethcontractService.getEmployeeAccountInfo(this.employeeAccount).then((result: any) => {
+        this.employeeBalance = result.balance.c[0] + "." + ("" + result.balance.c[1]).slice(0, 2);
+        window.sessionStorage.setItem("employeeBalance", this.employeeBalance)
+      })
     })
 
     this.clockOutForm = this.formBuilder.group({
@@ -45,19 +48,38 @@ export class HomeComponent implements OnInit {
     this.employeeBalance = window.sessionStorage.getItem("employeeBalance")
   }
 
+  clockIn() {
+    this.startWork = true;
+
+    let clockInReq = {
+      employeeId: this.employeeId,
+      employeeName: this.employeeDetail.name
+    }
+    this.dataService.clockIn(clockInReq).subscribe((data: any) => {
+      window.sessionStorage.setItem("timesheetId", data.id);
+      window.sessionStorage.setItem("timeIn", data.data.timeIn);
+    })
+  }
+
   clockOut() {
+    let currentTime = Date.now() as any;
+
+    this.duration = 8;
+    
     let clockOutRequest = {
       description: this.clockOutForm.get("description").value
     }
-    console.log(this.clockOutForm)
-    this.dataService.clockOut(this.timesheetId, clockOutRequest).subscribe((data:any) => {
+    this.timesheetId = window.sessionStorage.getItem("timesheetId");
+    this.timeIn = window.sessionStorage.getItem("timeIn");
+
+    this.dataService.clockOut(this.timesheetId, clockOutRequest).subscribe((data: any) => {
       console.log(data);
     })
     this.transferEther();
 
-    this.ethcontractService.getEmployeeAccountInfo(this.employeeAccount).then((result:any) => {
-      this.employeeBalance = result.balance.c[0] + "." + ("" + result.balance.c[1]).slice(0,2);
-      window.sessionStorage.setItem("employeeBalance", this.employeeBalance )
+    this.ethcontractService.getEmployeeAccountInfo(this.employeeAccount).then((result: any) => {
+      this.employeeBalance = result.balance.c[0] + "." + ("" + result.balance.c[1]).slice(0, 2);
+      window.sessionStorage.setItem("employeeBalance", this.employeeBalance)
     })
   }
 
@@ -70,9 +92,13 @@ export class HomeComponent implements OnInit {
     let remarks = this.clockOutForm.get("description").value;
 
     this.ethcontractService.transferEther(transferFrom, transferTo, amount, remarks).then(function () {
-      this.router.navigate("/paymentsuccess");
+      console.log("Payment success")
     }).catch(function (error) {
       console.log(error);
     });
+  }
+
+  refreshPage() {
+    window.location.reload();
   }
 }
