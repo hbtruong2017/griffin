@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class PaymentSuccessComponent implements OnInit {
   employeeDetail: any;
   employeeId: any;
+  amountPaid: string;
+  outTimestamp: string;
 
   constructor(private dataService: DataService, private router: Router) { }
 
@@ -20,6 +22,10 @@ export class PaymentSuccessComponent implements OnInit {
       console.log(this.employeeDetail)
       window.sessionStorage.setItem("employeeDetail", JSON.stringify(data.data))
     })
+
+    this.amountPaid = window.sessionStorage.getItem("amountPaid")
+    this.outTimestamp = window.sessionStorage.getItem("outTimestamp")
+
   }
 
   clockIn() {
@@ -31,6 +37,12 @@ export class PaymentSuccessComponent implements OnInit {
       window.sessionStorage.setItem("timesheetId", data.id);
       window.sessionStorage.setItem("timeIn", data.data.timeIn);
       this.router.navigate(["/home"])
+    })
+  }
+
+  routeToHome() {
+    this.router.navigate(['/home']).then(()=>{
+      window.location.reload();
     })
   }
 

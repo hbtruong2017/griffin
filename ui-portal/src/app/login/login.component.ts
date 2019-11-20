@@ -13,15 +13,18 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit() {
-    window.sessionStorage.clear();
+    // window.sessionStorage.clear();
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required]
+      email: ['', Validators.required],
+      password: ['', Validators.required]
     })
   }
 
   goToHome() {
     window.sessionStorage.setItem("email", this.loginForm.get("email").value)
     window.sessionStorage.setItem("startWork", "false")
+    window.sessionStorage.setItem("standardWorkPaid", "false")
+
     this.router.navigate(['/home']).then(() => {
       window.location.reload();
     })

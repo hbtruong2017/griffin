@@ -2,20 +2,6 @@
   "contractName": "OvertimePayment",
   "abi": [
     {
-      "constant": true,
-      "inputs": [],
-      "name": "paymentAmount",
-      "outputs": [
-        {
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "inputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
@@ -26,16 +12,19 @@
       "inputs": [
         {
           "indexed": false,
+          "internalType": "address payable",
           "name": "_transferTo",
           "type": "address"
         },
         {
           "indexed": false,
+          "internalType": "address",
           "name": "_transferFrom",
           "type": "address"
         },
         {
           "indexed": false,
+          "internalType": "uint256",
           "name": "paymentAmount",
           "type": "uint256"
         }
@@ -44,9 +33,25 @@
       "type": "event"
     },
     {
+      "constant": true,
+      "inputs": [],
+      "name": "paymentAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "constant": false,
       "inputs": [
         {
+          "internalType": "address payable",
           "name": "_transferTo",
           "type": "address"
         }
@@ -54,6 +59,7 @@
       "name": "transferFund",
       "outputs": [
         {
+          "internalType": "bool",
           "name": "",
           "type": "bool"
         }
@@ -66,10 +72,12 @@
       "constant": false,
       "inputs": [
         {
+          "internalType": "uint256",
           "name": "_overtimeRate",
           "type": "uint256"
         },
         {
+          "internalType": "uint256",
           "name": "_workHours",
           "type": "uint256"
         }
@@ -86,6 +94,7 @@
       "name": "getBalanceOfCurrentAccount",
       "outputs": [
         {
+          "internalType": "uint256",
           "name": "",
           "type": "uint256"
         }
@@ -95,15 +104,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_overtimeRate\",\"type\":\"uint256\"},{\"name\":\"_workHours\",\"type\":\"uint256\"}],\"name\":\"calPaymentAmount\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"paymentAmount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_transferTo\",\"type\":\"address\"}],\"name\":\"transferFund\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"getBalanceOfCurrentAccount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"_transferTo\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"_transferFrom\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"paymentAmount\",\"type\":\"uint256\"}],\"name\":\"TransferFund\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/E/griffin/sc/contracts/Payment.sol\":\"OvertimePayment\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/E/griffin/sc/contracts/Payment.sol\":{\"keccak256\":\"0xcd82c9e760bdfa1a4f9c54fdb52fa054925450fc76a6b6eb8986091e6171f3c3\",\"urls\":[\"bzzr://159adc3af8020e0bdce21d60a4308321e535b699fb7e2b6952ddf6cbee8ed940\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610344806100606000396000f3fe60806040526004361061003f5760003560e01c80634a1210fb14610044578063c35905c614610089578063cd4558fd146100b4578063eba1877b14610110575b600080fd5b34801561005057600080fd5b506100876004803603604081101561006757600080fd5b81019080803590602001909291908035906020019092919050505061012e565b005b34801561009557600080fd5b5061009e61013b565b6040518082815260200191505060405180910390f35b6100f6600480360360208110156100ca57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610141565b604051808215151515815260200191505060405180910390f35b6101186102d8565b6040518082815260200191505060405180910390f35b8082026005819055505050565b60055481565b600081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050501580156101ec573d6000803e3d6000fd5b507f41f7a8a1a70f43ecf6769f65a9933ba3370058d8e3422511a890553ba75ff3e8600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1634604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a160019050919050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163190509056fea165627a7a72305820634bbc3c45815ab6b1eb77c9dc0366c62799cadb2930bc677480da366c6600740029",
-  "deployedBytecode": "0x60806040526004361061003f5760003560e01c80634a1210fb14610044578063c35905c614610089578063cd4558fd146100b4578063eba1877b14610110575b600080fd5b34801561005057600080fd5b506100876004803603604081101561006757600080fd5b81019080803590602001909291908035906020019092919050505061012e565b005b34801561009557600080fd5b5061009e61013b565b6040518082815260200191505060405180910390f35b6100f6600480360360208110156100ca57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610141565b604051808215151515815260200191505060405180910390f35b6101186102d8565b6040518082815260200191505060405180910390f35b8082026005819055505050565b60055481565b600081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050501580156101ec573d6000803e3d6000fd5b507f41f7a8a1a70f43ecf6769f65a9933ba3370058d8e3422511a890553ba75ff3e8600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1634604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a160019050919050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163190509056fea165627a7a72305820634bbc3c45815ab6b1eb77c9dc0366c62799cadb2930bc677480da366c6600740029",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address payable\",\"name\":\"_transferTo\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_transferFrom\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"paymentAmount\",\"type\":\"uint256\"}],\"name\":\"TransferFund\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_overtimeRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_workHours\",\"type\":\"uint256\"}],\"name\":\"calPaymentAmount\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"getBalanceOfCurrentAccount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"paymentAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_transferTo\",\"type\":\"address\"}],\"name\":\"transferFund\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/xavlu/Documents/griffin/griffin/sc/contracts/Payment.sol\":\"OvertimePayment\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/xavlu/Documents/griffin/griffin/sc/contracts/Payment.sol\":{\"keccak256\":\"0xcd82c9e760bdfa1a4f9c54fdb52fa054925450fc76a6b6eb8986091e6171f3c3\",\"urls\":[\"bzz-raw://0cd5795a12ef76d5823720795543df551f2a48b0afe4fd3592f07014c735fc40\",\"dweb:/ipfs/QmZ9i8VFV8PcZYUvVaDfGKH8VcJPwnHVWbsnCjvbYXiCqU\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555061034d806100606000396000f3fe60806040526004361061003f5760003560e01c80634a1210fb14610044578063c35905c614610089578063cd4558fd146100b4578063eba1877b14610110575b600080fd5b34801561005057600080fd5b506100876004803603604081101561006757600080fd5b81019080803590602001909291908035906020019092919050505061012e565b005b34801561009557600080fd5b5061009e61013b565b6040518082815260200191505060405180910390f35b6100f6600480360360208110156100ca57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610141565b604051808215151515815260200191505060405180910390f35b6101186102d8565b6040518082815260200191505060405180910390f35b8082026005819055505050565b60055481565b600081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050501580156101ec573d6000803e3d6000fd5b507f41f7a8a1a70f43ecf6769f65a9933ba3370058d8e3422511a890553ba75ff3e8600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1634604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a160019050919050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163190509056fea265627a7a72315820be1b4bafa2a6ab53ebadd1dba1cd9cf8a5847917e460f1727b462910e0b4311a64736f6c634300050c0032",
+  "deployedBytecode": "0x60806040526004361061003f5760003560e01c80634a1210fb14610044578063c35905c614610089578063cd4558fd146100b4578063eba1877b14610110575b600080fd5b34801561005057600080fd5b506100876004803603604081101561006757600080fd5b81019080803590602001909291908035906020019092919050505061012e565b005b34801561009557600080fd5b5061009e61013b565b6040518082815260200191505060405180910390f35b6100f6600480360360208110156100ca57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610141565b604051808215151515815260200191505060405180910390f35b6101186102d8565b6040518082815260200191505060405180910390f35b8082026005819055505050565b60055481565b600081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050501580156101ec573d6000803e3d6000fd5b507f41f7a8a1a70f43ecf6769f65a9933ba3370058d8e3422511a890553ba75ff3e8600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1634604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a160019050919050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163190509056fea265627a7a72315820be1b4bafa2a6ab53ebadd1dba1cd9cf8a5847917e460f1727b462910e0b4311a64736f6c634300050c0032",
   "sourceMap": "1012:952:2:-;;;1268:65;8:9:-1;5:2;;;30:1;27;20:12;5:2;1268:65:2;1315:10;1300:12;;:25;;;;;;;;;;;;;;;;;;1012:952;;;;;;",
   "deployedSourceMap": "1012:952:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1705:130;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1705:130:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1705:130:2;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1227:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1227:28:2;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1442:251;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1442:251:2;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1847:114;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1705:130;1817:10;1801:13;:26;1785:13;:42;;;;1705:130;;:::o;1227:28::-;;;;:::o;1442:251::-;1517:4;1546:11;1533:10;;:24;;;;;;;;;;;;;;;;;;1568:10;;;;;;;;;;;:19;;:30;1588:9;1568:30;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1568:30:2;1614:49;1627:10;;;;;;;;;;;1639:12;;;;;;;;;;;1653:9;1614:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1681:4;1674:11;;1442:251;;;:::o;1847:114::-;1909:4;1933:12;;;;;;;;;;;:20;;;1926:27;;1847:114;:::o",
   "source": "pragma solidity ^0.5.8;\r\n\r\ncontract StandardPayment {\r\n    // This contract will be used for StandardPayment and LeavePayment\r\n    address transferFrom;\r\n    address payable transferTo;\r\n    uint256 id;\r\n    uint256 standardRate;\r\n    uint256 deductHours;\r\n    uint256 public paymentAmount;\r\n    \r\n    constructor() public {\r\n        transferFrom = msg.sender;\r\n    }\r\n    \r\n    event TransferFund(address payable _transferTo, address _transferFrom, uint paymentAmount);\r\n    function transferFund(address payable _transferTo) public payable returns (bool){\r\n        transferTo = _transferTo;\r\n        transferTo.transfer(msg.value);\r\n        emit TransferFund(transferTo, transferFrom, msg.value);\r\n        return true;\r\n    }\r\n    \r\n    function calPaymentAmount(uint _standardRate, uint _deductHours) public{\r\n        paymentAmount = _standardRate * (8 - _deductHours);\r\n    }\r\n    \r\n    function getBalanceOfCurrentAccount() public payable returns (uint) {\r\n        return transferFrom.balance;\r\n    }\r\n}\r\n\r\ncontract OvertimePayment {\r\n    // This contract will be used for OvertimePayment\r\n    address transferFrom;\r\n    address payable transferTo;\r\n    uint256 id;\r\n    uint256 overtimeRate;\r\n    uint256 workHours;\r\n    uint256 public paymentAmount;\r\n    \r\n    constructor() public {\r\n        transferFrom = msg.sender;\r\n    }\r\n    \r\n    event TransferFund(address payable _transferTo, address _transferFrom, uint paymentAmount);\r\n    function transferFund(address payable _transferTo) public payable returns (bool){\r\n        transferTo = _transferTo;\r\n        transferTo.transfer(msg.value);\r\n        emit TransferFund(transferTo, transferFrom, msg.value);\r\n        return true;\r\n    }\r\n    \r\n    function calPaymentAmount(uint _overtimeRate, uint _workHours) public{\r\n        paymentAmount = _overtimeRate * _workHours;\r\n    }\r\n    \r\n    function getBalanceOfCurrentAccount() public payable returns (uint) {\r\n        return transferFrom.balance;\r\n    }\r\n}\r\n\r\ncontract BonusPayment {\r\n    // This contract will be used for BonusPayment and ClaimPayment\r\n    address transferFrom;\r\n    address payable transferTo;\r\n    uint256 id;\r\n    uint256 public paymentAmount;\r\n    \r\n    constructor() public {\r\n        transferFrom = msg.sender;\r\n    }\r\n    \r\n    event TransferFund(address payable _transferTo, address _transferFrom, uint paymentAmount);\r\n    function transferFund(address payable _transferTo) public payable returns (bool){\r\n        transferTo = _transferTo;\r\n        transferTo.transfer(msg.value);\r\n        emit TransferFund(transferTo, transferFrom, msg.value);\r\n        return true;\r\n    }\r\n    \r\n    function calPaymentAmount(uint _amount) public{\r\n        paymentAmount = _amount;\r\n    }\r\n    \r\n    function getBalanceOfCurrentAccount() public payable returns (uint) {\r\n        return transferFrom.balance;\r\n    }\r\n}\r\n\r\n// 1. standard payment / leave: standard rate, deduct hours, hour = 8, \r\n// 2. overtime payment: overtime rate and hours\r\n// 3. bonus rate / claim: specify amount based on condition met \r\n// id, account \r\n// 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c",
-  "sourcePath": "E:/griffin/sc/contracts/Payment.sol",
+  "sourcePath": "C:/Users/xavlu/Documents/griffin/griffin/sc/contracts/Payment.sol",
   "ast": {
-    "absolutePath": "/E/griffin/sc/contracts/Payment.sol",
+    "absolutePath": "/C/Users/xavlu/Documents/griffin/griffin/sc/contracts/Payment.sol",
     "exportedSymbols": {
       "BonusPayment": [
         359
@@ -3002,7 +3011,7 @@
     "src": "0:3092:2"
   },
   "legacyAST": {
-    "absolutePath": "/E/griffin/sc/contracts/Payment.sol",
+    "absolutePath": "/C/Users/xavlu/Documents/griffin/griffin/sc/contracts/Payment.sol",
     "exportedSymbols": {
       "BonusPayment": [
         359
@@ -5902,11 +5911,11 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.16",
-  "updatedAt": "2019-11-20T01:12:13.114Z",
+  "schemaVersion": "3.0.19",
+  "updatedAt": "2019-11-20T05:50:51.618Z",
   "devdoc": {
     "methods": {}
   },

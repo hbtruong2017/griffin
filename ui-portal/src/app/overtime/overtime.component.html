@@ -14,12 +14,12 @@
         <div class="aside-body">
             <div class="aside-loggedin">
                 <div class="d-flex align-items-center">
-                    <a href="" class="avatar avatar-offline"><img src="images/paulgriffin.png" class="rounded-circle" alt=""></a>
+                    <a href="" class="avatar avatar-offline"><img src="../../../assets/images/paulgriffin.png" class="rounded-circle" alt=""></a>
                     <div class="aside-alert-link">
                       <a href=""><i class="fas fa-bell"></i></a>
                     </div>
                 </div>
-                <div class="aside-loggedin-user">
+                <div class="aside-loggedin-user">                                                                                                                                           
                     <a href="#loggedinMenu" class="d-flex align-items-center justify-content-between mg-b-2" data-toggle="collapse">
                           <h4 class="tx-employeename mg-b-0">Paul Griffin</h4>
                           <i class="fas fa-chevron-down"></i>
@@ -108,11 +108,9 @@
                         <table class="table">
                             <thead>
                                 <div class="d-sm-flex align-items-center mg-t-25 justify-content-between">
-                                    <nav class="nav nav-line">
                                         <button class="btn btn-primary">Pending</button>
                                         <button class="btn btn-outline-primary">Approved</button>
                                         <button class="btn btn-outline-primary">Rejected</button>
-                                    </nav>
                                 </div>
                             <tr>
                             <th scope="col" style="width: 10%"><br/>Employee ID</th>
@@ -125,15 +123,15 @@
                             </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1234</td>
-                                    <td>Xavier Lur</td>
-                                    <td>11 November 2019, 6.00pm</td>
-                                    <td>11 November 2019, 9.07pm</td>
-                                    <td>Conference call with the Asia Pacific strategy team to discuss expansion plans in the region.</td>
-                                    <td class="tx-16"><strong>$75.00</strong></td>
+                                <tr *ngIf="showOvertime">
+                                    <td>{{ timesheet.employeeId }}</td>
+                                    <td>{{ timesheet.employeeName }}</td>
+                                    <td>{{ timesheet.timeIn }}</td>
+                                    <td>{{ timesheet.timeOut }}</td>
+                                    <td>{{ timesheet.description }}</td>
+                                    <td class="tx-16"><strong>$16</strong></td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-success">Approve</button>
+                                        <button type="button" class="btn btn-outline-success" (click)="updateOvertime()">Approve</button>
                                         <button type="button" class="btn btn-outline-danger">Reject</button>
                                     </td>
                                 </tr>

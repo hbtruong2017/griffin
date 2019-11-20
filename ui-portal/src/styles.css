@@ -89,8 +89,8 @@ body {
 }
 
 .signin-wrapper input {
-    background-color:#e9f0fd;
-    color: #fff;
+    /* background-color:#e9f0fd; */
+    /* color: #fff; */
     border:none!important;
     height:45px;
     width:380px;

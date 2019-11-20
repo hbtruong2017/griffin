@@ -117,13 +117,13 @@
                       <div class="row col-12">
                           <div class="col text-center">
                               <h2 class="tx-25 mg-b-0">Payment Success!</h2><br/>
-                              <p class="tx-25 tx-semibold tx-success mg-b-0">$150.00</p>
+                              <p class="tx-25 tx-semibold tx-success mg-b-0">${{amountPaid}}</p>
                               <p class="tx-16 tx-color-grey mg-b-0">has been credited into your wallet.</p><br/><br/>
-                              <p class="tx-13 tx-color-grey mg-b-0">Transaction ID: #123456789</p>
-                              <p class="tx-13 tx-color-grey mg-b-0">Transaction made on: 11 Nov 2019, 6:01pm</p><br/>
+                              <p class="tx-13 tx-color-grey mg-b-0">Transaction ID: #298034561</p>
+                              <p class="tx-13 tx-color-grey mg-b-0">Transaction made on: {{outTimestamp}}</p><br/>
                               <a href="transactionhistory.html">View transaction</a><br/>
                               
-                               <button type="button" class="btn btn-outline-primary">Back to dashboard</button>
+                               <button type="button" class="btn btn-outline-primary" data-dismiss="modal" (click)="routeToHome()">Back to dashboard</button>
                                <button type="button" class="btn btn-primary">Sign out</button>
                           </div>
                       </div><br/>
@@ -190,7 +190,7 @@
                       Wallet Balance
                       <span class="tx-normal tx-color-grey">(in Griffs)</span>
                     </h6>
-                    <h2 class="tx-30 tx-semibold mg-b-0">$10,501.43</h2>
+                    <h2 class="tx-30 tx-semibold mg-b-0">$164.00</h2>
                   </div>
                 </div>
                 <button class="btn btn-sm btn-secondary btn-uppercase">
