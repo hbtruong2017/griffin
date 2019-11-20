@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   duration: any;
   salaryRate: any;
   timeIn: any;
-  employeeAccount: string = "0xC1a082E97f666Cbf9C31290aAf49C17c03Beed0c";
+  employeeAccount: string;
   employeeBalance: any;
   startWork: boolean;
 
@@ -30,16 +30,20 @@ export class HomeComponent implements OnInit {
     let credentials = {
       "paul.griffin@nike.com": {
         employeeId: "5daee7026fb70b0f746dd37b",
-        imgLink: "../../../assets/images/paulgriffin.png"
+        imgLink: "../../../assets/images/paulgriffin.png",
+        employeeAccount: "0xC1a082E97f666Cbf9C31290aAf49C17c03Beed0c"
       },
       "rachess.tan@nike.com": {
         employeeId: "5dd3f0b2c1486b23fc18ec07",
-        imgLink: "../../../assets/images/rachesstan.jpg"
+        imgLink: "../../../assets/images/rachesstan.jpg",
+        employeeAccount: "0x0f2d31cDf370c0c9825a7452e8d9586Ecf2A12Cf"
       }
     }
 
     this.employeeId = credentials[email].employeeId;
     this.imgLink = credentials[email].imgLink;
+    this.employeeAccount = credentials[email].employeeAccount;
+
     this.startWork = JSON.parse(window.sessionStorage.getItem("startWork"))
 
     this.dataService.getEmployeeDetails(this.employeeId).subscribe((data: any) => {
@@ -51,7 +55,8 @@ export class HomeComponent implements OnInit {
       window.sessionStorage.setItem("salaryRate", data.data.salaryRate)
 
       this.ethcontractService.getEmployeeAccountInfo(this.employeeAccount).then((result: any) => {
-        this.employeeBalance = result.balance.c[0] + "." + ("" + result.balance.c[1]).slice(0, 2);
+        let digit = (result.balance.c[1] ? result.balance.c[1] + "" : "000000")
+        this.employeeBalance = result.balance.c[0] + "." + digit.slice(0, 2);
         window.sessionStorage.setItem("employeeBalance", this.employeeBalance)
       })
     })
@@ -66,6 +71,8 @@ export class HomeComponent implements OnInit {
   clockIn() {
     this.startWork = true;
     window.sessionStorage.setItem("startWork", "true")
+
+    this.startWork = false;
 
     let clockInReq = {
       employeeId: this.employeeId,
@@ -108,8 +115,10 @@ export class HomeComponent implements OnInit {
 
   transferEther() {
     this.salaryRate = 0.1;
+    console.log("STart to transfer Ether")
     let transferFrom = "0x48EcE0Ae91d0b77D41eE67AE71508DfF154FCc61"; // default
-    let transferTo = "0x0f2d31cDf370c0c9825a7452e8d9586Ecf2A12Cf";
+    // let transferFrom = "0xB48EA375f2E418BF470ccD4693F6C387b895A874"
+    let transferTo = this.employeeAccount;
     let amount = this.salaryRate * 8;
     let remarks = this.clockOutForm.get("description").value;
 
